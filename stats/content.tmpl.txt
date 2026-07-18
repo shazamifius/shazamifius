@@ -1,0 +1,78 @@
+shazamifius@github ~ $ whoami
+
+  Je bricole des systèmes bas-niveau, faits main, en binôme avec l'IA.
+  Voici mes travaux en cours — vous pouvez les tester.
+
+
+shazamifius@github ~ $ cat web3game.md
+
+  ┌─[ web3game ]·· Rust · pair-à-pair
+  │
+  │   Un petit moteur P2P pour des mondes partagés massifs, sans
+  │   serveur de jeu central. Ni un produit, ni une promesse.
+  │
+  │   ( « web3 » ici = décentralisé, pair-à-pair. Pas de blockchain,
+  │     pas de token, pas de spéculation. La seule « crypto », c'est
+  │     la cryptographie : une clé = une identité, à toi seul. )
+  │
+  │   ce qui tient déjà, modestement
+  │     ├─ une identité que tu possèdes vraiment (clé Ed25519)
+  │     ├─ traversée NAT réelle + relais quand la box est fermée
+  │     ├─ un réseau qui se mesure et adapte sa redondance seul
+  │     ├─ anti-triche « Own + Shields », testé en s'attaquant soi-même
+  │     └─ Bevy + Unreal réunis dans un même espace partagé
+  │
+  │   ce qu'il reste — et ce qui me fait douter
+  │     ├─ rendre la foule vraiment vivante, ressentie
+  │     ├─ passer l'échelle sans me mentir sur les chiffres
+  │     └─ le seul test qui compte : deux humains, ensemble
+  │
+  │   la vision, tout au loin
+  │     └─ un OASIS pair-à-pair… j'en suis loin, et je l'assume.
+  │
+  │   → github.com/shazamifius/web3game
+  └───
+
+
+shazamifius@github ~ $ cat glucose.md
+
+  ┌─[ Glucose ]·· TypeScript · Rust · CRDT
+  │
+  │   Un canvas infini pour poser ses idées à plat, et les relier.
+  │   « Pose. Relie. Zoome. Explore. » — rien d'autre.
+  │
+  │   ce qui marche déjà
+  │     ├─ toile infinie, notes reliées par flèches typées (du sens)
+  │     ├─ 100% local · doc Automerge (CRDT) qu'on ne peut pas casser
+  │     ├─ un serveur MCP fait main : l'IA lit la STRUCTURE, pas l'écran
+  │     └─ une géométrie déterministe (même entrée = même sortie)
+  │
+  │   ce que je cherche encore
+  │     ├─ pas « mieux » qu'une feuille de papier —
+  │     │  une feuille au goût de 2026, son évolution
+  │     └─ affiner, tout doux, le pont entre l'humain et l'IA
+  │
+  │   l'idée, au fond
+  │     └─ un langage 2D entre l'espace latent de l'IA et l'œil
+  │
+  │   v1.0.1-beta.24 · MIT · bêta, encore en chantier
+  │   → github.com/shazamifius/GlucoseGit
+  └───
+
+
+shazamifius@github ~ $ git log --numstat | activité
+
+  ┌─[ investissement ]·· lignes touchées (ajouts + suppressions)
+  │
+  │   tout-temps · privé + public .......... {{TOTAL_ALL}} lignes
+  │   7 derniers jours · privé + public .... {{TOTAL_7D}} lignes
+  │
+  │   projets publics
+{{PUBLIC_LINES}}
+  │   privé ({{N_PRIV}}) · {{PRIV_ALL}} lignes
+  │
+  │   au {{DATE}} · recalculé tout seul, chaque jour (GitHub Action)
+  └───
+
+
+  shazamifius@github ~ $ █    encore en travail.

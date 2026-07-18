@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-07-18",
+  "totalAll": 290787,
+  "total7d": 9195,
+  "publicAll": 251162,
+  "privateAll": 39625,
+  "public7d": 8088,
+  "private7d": 1107,
+  "repos": [
+    {
+      "name": "web3game",
+      "private": false,
+      "lang": "Rust",
+      "all": 61448,
+      "d7": 3347
+    },
+    {
+      "name": "GlucoseGit",
+      "private": false,
+      "lang": "TypeScript",
+      "all": 60537,
+      "d7": 4741
+    },
+    {
+      "name": "ultra-sync",
+      "private": false,
+      "lang": "Rust",
+      "all": 55187,
+      "d7": 0
+    },
+    {
+      "name": "eegprev",
+      "private": false,
+      "lang": "EJS",
+      "all": 31042,
+      "d7": 0
+    },
+    {
+      "name": "web3game-logs",
+      "private": true,
+      "lang": null,
+      "all": 28973,
+      "d7": 767
+    },
+    {
+      "name": "VRchatFACE-HAND-ARM-tracking",
+      "private": false,
+      "lang": "Rust",
+      "all": 22760,
+      "d7": 0
+    },
+    {
+      "name": "gogames",
+      "private": false,
+      "lang": "JavaScript",
+      "all": 15788,
+      "d7": 0
+    },
+    {
+      "name": "web3game-launcher",
+      "private": true,
+      "lang": "Rust",
+      "all": 6225,
+      "d7": 340
+    },
+    {
+      "name": "spike01-unreal",
+      "private": true,
+      "lang": "C++",
+      "all": 4427,
+      "d7": 0
+    },
+    {
+      "name": "Simulateur-d-emergence-D-eterministe",
+      "private": false,
+      "lang": "Rust",
+      "all": 4205,
+      "d7": 0
+    },
+    {
+      "name": "Luma-app-documentation",
+      "private": false,
+      "lang": "HTML",
+      "all": 195,
+      "d7": 0
+    }
+  ]
+}
