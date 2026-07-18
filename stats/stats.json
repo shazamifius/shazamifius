@@ -1,11 +1,11 @@
 {
   "generatedAt": "2026-07-18",
   "totalAll": 290787,
-  "total7d": 9195,
+  "total7d": 9187,
   "publicAll": 251162,
   "privateAll": 39625,
   "public7d": 8088,
-  "private7d": 1107,
+  "private7d": 1099,
   "repos": [
     {
       "name": "web3game",
@@ -40,7 +40,7 @@
       "private": true,
       "lang": null,
       "all": 28973,
-      "d7": 767
+      "d7": 759
     },
     {
       "name": "VRchatFACE-HAND-ARM-tracking",
