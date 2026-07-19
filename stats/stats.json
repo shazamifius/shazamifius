@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-18",
-  "totalAll": 290787,
-  "total7d": 9187,
-  "publicAll": 251162,
-  "privateAll": 39625,
-  "public7d": 8088,
-  "private7d": 1099,
+  "generatedAt": "2026-07-19",
+  "totalAll": 299345,
+  "total7d": 17286,
+  "publicAll": 255036,
+  "privateAll": 44309,
+  "public7d": 11747,
+  "private7d": 5539,
   "repos": [
     {
       "name": "web3game",
@@ -40,7 +40,7 @@
       "private": true,
       "lang": null,
       "all": 28973,
-      "d7": 759
+      "d7": 515
     },
     {
       "name": "VRchatFACE-HAND-ARM-tracking",
@@ -60,28 +60,21 @@
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 6225,
-      "d7": 340
+      "all": 10909,
+      "d7": 5024
+    },
+    {
+      "name": "Simulateur-d-emergence-D-eterministe",
+      "private": false,
+      "lang": "Rust",
+      "all": 8274,
+      "d7": 3659
     },
     {
       "name": "spike01-unreal",
       "private": true,
       "lang": "C++",
       "all": 4427,
-      "d7": 0
-    },
-    {
-      "name": "Simulateur-d-emergence-D-eterministe",
-      "private": false,
-      "lang": "Rust",
-      "all": 4205,
-      "d7": 0
-    },
-    {
-      "name": "Luma-app-documentation",
-      "private": false,
-      "lang": "HTML",
-      "all": 195,
       "d7": 0
     }
   ]
