@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-07-20",
-  "totalAll": 302982,
-  "total7d": 20731,
-  "publicAll": 256429,
-  "privateAll": 46553,
-  "public7d": 13078,
-  "private7d": 7653,
+  "generatedAt": "2026-07-21",
+  "totalAll": 307567,
+  "total7d": 20990,
+  "publicAll": 257906,
+  "privateAll": 49661,
+  "public7d": 13233,
+  "private7d": 7757,
   "repos": [
     {
       "name": "web3game",
       "private": false,
       "lang": "Rust",
-      "all": 62841,
-      "d7": 4678
+      "all": 64318,
+      "d7": 4833
     },
     {
       "name": "GlucoseGit",
@@ -40,7 +40,7 @@
       "private": true,
       "lang": null,
       "all": 28973,
-      "d7": 385
+      "d7": 102
     },
     {
       "name": "VRchatFACE-HAND-ARM-tracking",
@@ -60,8 +60,8 @@
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 13153,
-      "d7": 7268
+      "all": 13411,
+      "d7": 7186
     },
     {
       "name": "Simulateur-d-emergence-D-eterministe",
@@ -74,8 +74,8 @@
       "name": "spike01-unreal",
       "private": true,
       "lang": "C++",
-      "all": 4427,
-      "d7": 0
+      "all": 7277,
+      "d7": 469
     }
   ]
 }
