@@ -1,25 +1,25 @@
 {
-  "generatedAt": "2026-07-21",
-  "totalAll": 307567,
-  "total7d": 20990,
-  "publicAll": 257906,
-  "privateAll": 49661,
-  "public7d": 13233,
-  "private7d": 7757,
+  "generatedAt": "2026-07-22",
+  "totalAll": 310459,
+  "total7d": 21194,
+  "publicAll": 260026,
+  "privateAll": 50433,
+  "public7d": 12665,
+  "private7d": 8529,
   "repos": [
     {
       "name": "web3game",
       "private": false,
       "lang": "Rust",
-      "all": 64318,
-      "d7": 4833
+      "all": 66438,
+      "d7": 6585
     },
     {
       "name": "GlucoseGit",
       "private": false,
       "lang": "TypeScript",
       "all": 60537,
-      "d7": 4741
+      "d7": 2421
     },
     {
       "name": "ultra-sync",
@@ -60,8 +60,8 @@
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 13411,
-      "d7": 7186
+      "all": 14183,
+      "d7": 7958
     },
     {
       "name": "Simulateur-d-emergence-D-eterministe",
