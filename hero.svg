@@ -220,216 +220,216 @@
   <linearGradient id="fade2" gradientUnits="userSpaceOnUse" x1="0" y1="1000" x2="0" y2="2000"><stop offset="0" stop-color="#fff"/><stop offset="0.58" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
   <mask id="fade2m" maskUnits="userSpaceOnUse" x="0" y="0" width="2100" height="2970"><rect width="2100" height="2970" fill="url(#fade2)"/></mask>
   <g clip-path="url(#winClip)" font-family="Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" font-size="14" fill="#333333" xml:space="preserve">
-    <text x="1575" y="226.1" xml:space="preserve">                    .   .</text>
-    <text x="1575" y="244.0" xml:space="preserve">                 ``,^^^^,^'`.</text>
-    <text x="1575" y="262.0" xml:space="preserve">              `'^^===++===+^^:`</text>
-    <text x="1575" y="279.9" xml:space="preserve">            `,-~==*oooCoooc+=~-^`.</text>
-    <text x="1575" y="297.8" xml:space="preserve">           :,-=+*CCQ0Q0Q0QOCc+=-,,</text>
-    <text x="1575" y="315.7" xml:space="preserve">          `,^~+coO0Cc+c+c*#QCc*=-,:</text>
-    <text x="1575" y="333.6" xml:space="preserve">          .^~=+cCQ0:08&amp;&amp;#^C0Oo*=~-'</text>
-    <text x="1575" y="351.6" xml:space="preserve">           ,^=*oCQ#c+Q%0c~#QOo*=-,`</text>
-    <text x="1575" y="369.5" xml:space="preserve">           .^-=*oCO00*C*O0QCoc+-,'</text>
-    <text x="1575" y="387.4" xml:space="preserve">            '^~=+*coCOOOCooc+=~~'.</text>
-    <text x="1575" y="405.3" xml:space="preserve">             ',^-~+=*c**c+=~-^,,</text>
-    <text x="1575" y="423.2" xml:space="preserve">               .:,---^-^-~^^,`</text>
-    <text x="1575" y="441.2" xml:space="preserve">                    .. ^,</text>
-    <text x="1575" y="459.1" xml:space="preserve">                       =.</text>
-    <text x="1575" y="477.0" xml:space="preserve">                       +</text>
-    <text x="1575" y="494.9" xml:space="preserve">                      ~`</text>
-    <text x="1575" y="512.8" xml:space="preserve">                     .=</text>
-    <text x="1575" y="530.8" xml:space="preserve">                     =</text>
-    <text x="1575" y="548.7" xml:space="preserve">                    ,c.</text>
-    <text x="1575" y="566.6" xml:space="preserve">                    =0O=.</text>
-    <text x="1575" y="584.5" xml:space="preserve">                    'Coc+`</text>
-    <text x="1575" y="602.4" xml:space="preserve">                    ~:~==-</text>
-    <text x="1575" y="620.4" xml:space="preserve">                   -:  `,^`</text>
+    <text x="1575" y="226.1" xml:space="preserve">                    .   .</text>
+    <text x="1575" y="244.0" xml:space="preserve">                 ``,^^^^,^'`.</text>
+    <text x="1575" y="262.0" xml:space="preserve">              `'^^===++===+^^:`</text>
+    <text x="1575" y="279.9" xml:space="preserve">            `,-~==*oooCoooc+=~-^`.</text>
+    <text x="1575" y="297.8" xml:space="preserve">           :,-=+*CCQ0Q0Q0QOCc+=-,,</text>
+    <text x="1575" y="315.7" xml:space="preserve">          `,^~+coO0Cc+c+c*#QCc*=-,:</text>
+    <text x="1575" y="333.6" xml:space="preserve">          .^~=+cCQ0:08&amp;&amp;#^C0Oo*=~-'</text>
+    <text x="1575" y="351.6" xml:space="preserve">           ,^=*oCQ#c+Q%0c~#QOo*=-,`</text>
+    <text x="1575" y="369.5" xml:space="preserve">           .^-=*oCO00*C*O0QCoc+-,'</text>
+    <text x="1575" y="387.4" xml:space="preserve">            '^~=+*coCOOOCooc+=~~'.</text>
+    <text x="1575" y="405.3" xml:space="preserve">             ',^-~+=*c**c+=~-^,,</text>
+    <text x="1575" y="423.2" xml:space="preserve">               .:,---^-^-~^^,`</text>
+    <text x="1575" y="441.2" xml:space="preserve">                    .. ^,</text>
+    <text x="1575" y="459.1" xml:space="preserve">                       =.</text>
+    <text x="1575" y="477.0" xml:space="preserve">                       +</text>
+    <text x="1575" y="494.9" xml:space="preserve">                      ~`</text>
+    <text x="1575" y="512.8" xml:space="preserve">                     .=</text>
+    <text x="1575" y="530.8" xml:space="preserve">                     =</text>
+    <text x="1575" y="548.7" xml:space="preserve">                    ,c.</text>
+    <text x="1575" y="566.6" xml:space="preserve">                    =0O=.</text>
+    <text x="1575" y="584.5" xml:space="preserve">                    'Coc+`</text>
+    <text x="1575" y="602.4" xml:space="preserve">                    ~:~==-</text>
+    <text x="1575" y="620.4" xml:space="preserve">                   -:  `,^`</text>
     <text x="1575" y="638.3" xml:space="preserve">                  ,       .</text>
   </g>
   <g clip-path="url(#winClip)" font-family="Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" font-size="12" fill="#333333" xml:space="preserve">
-    <text x="1715" y="1703.8" xml:space="preserve">            `    ':</text>
-    <text x="1715" y="1719.2" xml:space="preserve">            `=+Cc=..</text>
-    <text x="1715" y="1734.5" xml:space="preserve">            :--O+^~.</text>
-    <text x="1715" y="1749.9" xml:space="preserve">            :,=Q0~',.</text>
-    <text x="1715" y="1765.3" xml:space="preserve">            .=coQ+*'</text>
-    <text x="1715" y="1780.6" xml:space="preserve">            ^^-*#-^-'</text>
-    <text x="1715" y="1796.0" xml:space="preserve">           ``^oO%C+'`</text>
-    <text x="1715" y="1811.3" xml:space="preserve">            ^+-=#,~=:</text>
-    <text x="1715" y="1826.7" xml:space="preserve">           ::^*0%O=::.</text>
-    <text x="1715" y="1842.1" xml:space="preserve">            ^*==0^*+'</text>
-    <text x="1715" y="1857.4" xml:space="preserve">          .-^-*0%o=,-'</text>
-    <text x="1715" y="1872.8" xml:space="preserve">          ``~cc*Q+c+'`</text>
-    <text x="1715" y="1888.1" xml:space="preserve">          .~~=+Q#*=-~'</text>
-    <text x="1715" y="1903.5" xml:space="preserve">          :'=ooCOoo+,:</text>
-    <text x="1715" y="1918.9" xml:space="preserve">          '=+=+Q0*++=`</text>
-    <text x="1715" y="1934.2" xml:space="preserve">         ',,=COQOOo+^^.</text>
-    <text x="1715" y="1949.6" xml:space="preserve">          :=*++QO***='`</text>
-    <text x="1715" y="1964.9" xml:space="preserve">         ^-^*CQ0QQC*=-.</text>
-    <text x="1715" y="1980.3" xml:space="preserve">        ..,+*c*OOocc+^,</text>
-    <text x="1715" y="1995.7" xml:space="preserve">         ^~~oOQ##QOc=~:</text>
-    <text x="1715" y="2011.0" xml:space="preserve">        ``,+cooo0ooc*+^</text>
-    <text x="1715" y="2026.4" xml:space="preserve">         ,==cC0#80Oo*~.</text>
-    <text x="1715" y="2041.7" xml:space="preserve">          '=coC*&amp;cOC=`,^</text>
-    <text x="1715" y="2057.1" xml:space="preserve">        .`. '~o080*,-=='</text>
-    <text x="1715" y="2072.5" xml:space="preserve">         :~~~^: **`*c*-</text>
-    <text x="1715" y="2087.8" xml:space="preserve">          .,+coCc%oQO- .:-`</text>
-    <text x="1715" y="2103.2" xml:space="preserve">          '--~+cO##+`.-==,</text>
-    <text x="1715" y="2118.5" xml:space="preserve">           .-+c+-'%.^cc*-</text>
-    <text x="1715" y="2133.9" xml:space="preserve">           ,',=COQ#QQQc: ',^</text>
-    <text x="1715" y="2149.3" xml:space="preserve">           .~=~~~*O8+:.^==~.</text>
-    <text x="1715" y="2164.6" xml:space="preserve">            .-*cc+'&amp;.~ccc=.</text>
-    <text x="1715" y="2180.0" xml:space="preserve">           :^:^+OQQ8OQQo, `',</text>
-    <text x="1715" y="2195.3" xml:space="preserve">            ,===--*#O=:`^~=~.</text>
-    <text x="1715" y="2210.7" xml:space="preserve">           ` ,*ccc:C='+cc*-.</text>
-    <text x="1715" y="2226.1" xml:space="preserve">           :-,:=OQQ#QQQC+' .'`</text>
-    <text x="1715" y="2241.4" xml:space="preserve">            -===^-c%0c-':^=~,</text>
-    <text x="1715" y="2256.8" xml:space="preserve">          .  ~*cc+.Q^`~*c+='</text>
-    <text x="1715" y="2272.1" xml:space="preserve">          `~,`,cOQC%cOOCc^. ..</text>
-    <text x="1715" y="2287.5" xml:space="preserve">           ,==~,^c08#O+,':-~^</text>
-    <text x="1715" y="2302.9" xml:space="preserve">            -+c*+`:% `-+*==:</text>
-    <text x="1715" y="2318.2" xml:space="preserve">         ,^' ,cCQO*O=OCoc-.</text>
-    <text x="1715" y="2333.6" xml:space="preserve">          -=~^'-C#8%00c-''^-,</text>
-    <text x="1715" y="2348.9" xml:space="preserve">          .=+c*~.`#=''^+==='</text>
-    <text x="1715" y="2364.3" xml:space="preserve">        ::..~coCo'8'*occ*-.</text>
-    <text x="1715" y="2379.7" xml:space="preserve">        .~+^:,c000800QC~``',`</text>
-    <text x="1715" y="2395.0" xml:space="preserve">         '=+*=,'~Q0*~,,-==~'</text>
-    <text x="1715" y="2410.4" xml:space="preserve">       .  '*coo*.O^'=cc*+-.</text>
-    <text x="1715" y="2425.7" xml:space="preserve">       --,`.=OQQC8cOQCo=:.':</text>
-    <text x="1715" y="2441.1" xml:space="preserve">        ~==~:'=O%8#0c~^,=~-</text>
-    <text x="1715" y="2456.5" xml:space="preserve">        .=+c**: ~O.`-+*+=^</text>
-    <text x="1715" y="2471.8" xml:space="preserve">      ,`  ~cCCO=c*+Oooc+: ..</text>
-    <text x="1715" y="2487.2" xml:space="preserve">      :~=,''+Q008#00O*^'^--</text>
-    <text x="1715" y="2502.5" xml:space="preserve">       ,==++^`^+&amp;o=^^====-</text>
-    <text x="1715" y="2517.9" xml:space="preserve">        ,*cocc:.&amp; ^ccc*+^ .</text>
-    <text x="1715" y="2533.3" xml:space="preserve">    `^'. `=COQQ*%cQOCo=,,-,</text>
-    <text x="1715" y="2548.6" xml:space="preserve">     '~+~^'`~C#%8#0c+~~==-</text>
-    <text x="1715" y="2564.0" xml:space="preserve">      '~++*+^ .+Q'`=*c*+-</text>
-    <text x="1715" y="2579.3" xml:space="preserve">       .~*cooC,~C^OCoc*^`,^</text>
-    <text x="1715" y="2594.7" xml:space="preserve">    ^:'. '+CQ00Q%00QC+-~=~</text>
-    <text x="1715" y="2610.1" xml:space="preserve">     ^~+~^:`^*O#8O*~~*==~'</text>
-    <text x="1715" y="2625.4" xml:space="preserve">      :=+*c*=' ^0 ^oco**:`^</text>
-    <text x="1715" y="2640.8" xml:space="preserve">       .-*coCO*,%~OQOo*^--,</text>
-    <text x="1715" y="2656.1" xml:space="preserve">    ,'`  `-oO000&amp;#00c+=~+=</text>
-    <text x="1715" y="2671.5" xml:space="preserve">    .^~+-^,``^+o%C-:++c*+:</text>
-    <text x="1715" y="2686.9" xml:space="preserve">      :~=+c+*-` o+'Cooc*^</text>
-    <text x="1715" y="2702.2" xml:space="preserve">        ^+cooCO*=QOQQOo:</text>
-    <text x="1715" y="2717.6" xml:space="preserve">          :~oQ00#&amp;##O-</text>
-    <text x="1715" y="2732.9" xml:space="preserve">             `,~+QC'</text>
-    <text x="1715" y="2748.3" xml:space="preserve">                 :#</text>
-    <text x="1715" y="2763.7" xml:space="preserve">                  O-</text>
-    <text x="1715" y="2779.0" xml:space="preserve">                  :o</text>
+    <text x="1715" y="1703.8" xml:space="preserve">            `    ':</text>
+    <text x="1715" y="1719.2" xml:space="preserve">            `=+Cc=..</text>
+    <text x="1715" y="1734.5" xml:space="preserve">            :--O+^~.</text>
+    <text x="1715" y="1749.9" xml:space="preserve">            :,=Q0~',.</text>
+    <text x="1715" y="1765.3" xml:space="preserve">            .=coQ+*'</text>
+    <text x="1715" y="1780.6" xml:space="preserve">            ^^-*#-^-'</text>
+    <text x="1715" y="1796.0" xml:space="preserve">           ``^oO%C+'`</text>
+    <text x="1715" y="1811.3" xml:space="preserve">            ^+-=#,~=:</text>
+    <text x="1715" y="1826.7" xml:space="preserve">           ::^*0%O=::.</text>
+    <text x="1715" y="1842.1" xml:space="preserve">            ^*==0^*+'</text>
+    <text x="1715" y="1857.4" xml:space="preserve">          .-^-*0%o=,-'</text>
+    <text x="1715" y="1872.8" xml:space="preserve">          ``~cc*Q+c+'`</text>
+    <text x="1715" y="1888.1" xml:space="preserve">          .~~=+Q#*=-~'</text>
+    <text x="1715" y="1903.5" xml:space="preserve">          :'=ooCOoo+,:</text>
+    <text x="1715" y="1918.9" xml:space="preserve">          '=+=+Q0*++=`</text>
+    <text x="1715" y="1934.2" xml:space="preserve">         ',,=COQOOo+^^.</text>
+    <text x="1715" y="1949.6" xml:space="preserve">          :=*++QO***='`</text>
+    <text x="1715" y="1964.9" xml:space="preserve">         ^-^*CQ0QQC*=-.</text>
+    <text x="1715" y="1980.3" xml:space="preserve">        ..,+*c*OOocc+^,</text>
+    <text x="1715" y="1995.7" xml:space="preserve">         ^~~oOQ##QOc=~:</text>
+    <text x="1715" y="2011.0" xml:space="preserve">        ``,+cooo0ooc*+^</text>
+    <text x="1715" y="2026.4" xml:space="preserve">         ,==cC0#80Oo*~.</text>
+    <text x="1715" y="2041.7" xml:space="preserve">          '=coC*&amp;cOC=`,^</text>
+    <text x="1715" y="2057.1" xml:space="preserve">        .`. '~o080*,-=='</text>
+    <text x="1715" y="2072.5" xml:space="preserve">         :~~~^: **`*c*-</text>
+    <text x="1715" y="2087.8" xml:space="preserve">          .,+coCc%oQO- .:-`</text>
+    <text x="1715" y="2103.2" xml:space="preserve">          '--~+cO##+`.-==,</text>
+    <text x="1715" y="2118.5" xml:space="preserve">           .-+c+-'%.^cc*-</text>
+    <text x="1715" y="2133.9" xml:space="preserve">           ,',=COQ#QQQc: ',^</text>
+    <text x="1715" y="2149.3" xml:space="preserve">           .~=~~~*O8+:.^==~.</text>
+    <text x="1715" y="2164.6" xml:space="preserve">            .-*cc+'&amp;.~ccc=.</text>
+    <text x="1715" y="2180.0" xml:space="preserve">           :^:^+OQQ8OQQo, `',</text>
+    <text x="1715" y="2195.3" xml:space="preserve">            ,===--*#O=:`^~=~.</text>
+    <text x="1715" y="2210.7" xml:space="preserve">           ` ,*ccc:C='+cc*-.</text>
+    <text x="1715" y="2226.1" xml:space="preserve">           :-,:=OQQ#QQQC+' .'`</text>
+    <text x="1715" y="2241.4" xml:space="preserve">            -===^-c%0c-':^=~,</text>
+    <text x="1715" y="2256.8" xml:space="preserve">          .  ~*cc+.Q^`~*c+='</text>
+    <text x="1715" y="2272.1" xml:space="preserve">          `~,`,cOQC%cOOCc^. ..</text>
+    <text x="1715" y="2287.5" xml:space="preserve">           ,==~,^c08#O+,':-~^</text>
+    <text x="1715" y="2302.9" xml:space="preserve">            -+c*+`:% `-+*==:</text>
+    <text x="1715" y="2318.2" xml:space="preserve">         ,^' ,cCQO*O=OCoc-.</text>
+    <text x="1715" y="2333.6" xml:space="preserve">          -=~^'-C#8%00c-''^-,</text>
+    <text x="1715" y="2348.9" xml:space="preserve">          .=+c*~.`#=''^+==='</text>
+    <text x="1715" y="2364.3" xml:space="preserve">        ::..~coCo'8'*occ*-.</text>
+    <text x="1715" y="2379.7" xml:space="preserve">        .~+^:,c000800QC~``',`</text>
+    <text x="1715" y="2395.0" xml:space="preserve">         '=+*=,'~Q0*~,,-==~'</text>
+    <text x="1715" y="2410.4" xml:space="preserve">       .  '*coo*.O^'=cc*+-.</text>
+    <text x="1715" y="2425.7" xml:space="preserve">       --,`.=OQQC8cOQCo=:.':</text>
+    <text x="1715" y="2441.1" xml:space="preserve">        ~==~:'=O%8#0c~^,=~-</text>
+    <text x="1715" y="2456.5" xml:space="preserve">        .=+c**: ~O.`-+*+=^</text>
+    <text x="1715" y="2471.8" xml:space="preserve">      ,`  ~cCCO=c*+Oooc+: ..</text>
+    <text x="1715" y="2487.2" xml:space="preserve">      :~=,''+Q008#00O*^'^--</text>
+    <text x="1715" y="2502.5" xml:space="preserve">       ,==++^`^+&amp;o=^^====-</text>
+    <text x="1715" y="2517.9" xml:space="preserve">        ,*cocc:.&amp; ^ccc*+^ .</text>
+    <text x="1715" y="2533.3" xml:space="preserve">    `^'. `=COQQ*%cQOCo=,,-,</text>
+    <text x="1715" y="2548.6" xml:space="preserve">     '~+~^'`~C#%8#0c+~~==-</text>
+    <text x="1715" y="2564.0" xml:space="preserve">      '~++*+^ .+Q'`=*c*+-</text>
+    <text x="1715" y="2579.3" xml:space="preserve">       .~*cooC,~C^OCoc*^`,^</text>
+    <text x="1715" y="2594.7" xml:space="preserve">    ^:'. '+CQ00Q%00QC+-~=~</text>
+    <text x="1715" y="2610.1" xml:space="preserve">     ^~+~^:`^*O#8O*~~*==~'</text>
+    <text x="1715" y="2625.4" xml:space="preserve">      :=+*c*=' ^0 ^oco**:`^</text>
+    <text x="1715" y="2640.8" xml:space="preserve">       .-*coCO*,%~OQOo*^--,</text>
+    <text x="1715" y="2656.1" xml:space="preserve">    ,'`  `-oO000&amp;#00c+=~+=</text>
+    <text x="1715" y="2671.5" xml:space="preserve">    .^~+-^,``^+o%C-:++c*+:</text>
+    <text x="1715" y="2686.9" xml:space="preserve">      :~=+c+*-` o+'Cooc*^</text>
+    <text x="1715" y="2702.2" xml:space="preserve">        ^+cooCO*=QOQQOo:</text>
+    <text x="1715" y="2717.6" xml:space="preserve">          :~oQ00#&amp;##O-</text>
+    <text x="1715" y="2732.9" xml:space="preserve">             `,~+QC'</text>
+    <text x="1715" y="2748.3" xml:space="preserve">                 :#</text>
+    <text x="1715" y="2763.7" xml:space="preserve">                  O-</text>
+    <text x="1715" y="2779.0" xml:space="preserve">                  :o</text>
   </g>
   <g clip-path="url(#winClip)" font-family="Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" font-size="11" fill="#333333" xml:space="preserve" mask="url(#fade2m)">
-    <text x="1575" y="1012.7" xml:space="preserve">       ..</text>
-    <text x="1575" y="1026.8" xml:space="preserve">     ````.:</text>
-    <text x="1575" y="1040.8" xml:space="preserve">      ,``,</text>
-    <text x="1575" y="1054.9" xml:space="preserve">      ,``,</text>
-    <text x="1575" y="1069.0" xml:space="preserve"> `    ,'',</text>
-    <text x="1575" y="1083.1" xml:space="preserve"> `:    -^`</text>
-    <text x="1575" y="1097.2" xml:space="preserve">   :.  ~~      .</text>
-    <text x="1575" y="1111.2" xml:space="preserve">    -:,+~    `:</text>
-    <text x="1575" y="1125.3" xml:space="preserve">   `-^-+c:  :`</text>
-    <text x="1575" y="1139.4" xml:space="preserve"> :. ===+**,^</text>
-    <text x="1575" y="1153.5" xml:space="preserve">  '`.+oc~^,^`</text>
-    <text x="1575" y="1167.6" xml:space="preserve">   .::o+==~=  '.</text>
-    <text x="1575" y="1181.6" xml:space="preserve">   .-,^=cc*'.:</text>
-    <text x="1575" y="1195.7" xml:space="preserve"> ` .=-~==o:`'</text>
-    <text x="1575" y="1209.8" xml:space="preserve"> `: ,**c+~^-</text>
-    <text x="1575" y="1223.9" xml:space="preserve">   :.:C+~--~`</text>
-    <text x="1575" y="1238.0" xml:space="preserve">    -^=**+=~ `:</text>
-    <text x="1575" y="1252.0" xml:space="preserve">   `-^--*C~ :`</text>
-    <text x="1575" y="1266.1" xml:space="preserve"> :. ===+**,^</text>
-    <text x="1575" y="1280.2" xml:space="preserve">  '`.+oc~^,-`</text>
-    <text x="1575" y="1294.3" xml:space="preserve">   .::o+==~=  '.</text>
-    <text x="1575" y="1308.4" xml:space="preserve">   .-,^=cc*'.:</text>
-    <text x="1575" y="1322.4" xml:space="preserve"> ` .=-~==o:`'</text>
-    <text x="1575" y="1336.5" xml:space="preserve"> `: ,**c+~^-</text>
-    <text x="1575" y="1350.6" xml:space="preserve">   :.:C+~--~`</text>
-    <text x="1575" y="1364.7" xml:space="preserve">    -^=**+=~ `:</text>
-    <text x="1575" y="1378.8" xml:space="preserve">   `-^--+C~ :`</text>
-    <text x="1575" y="1392.8" xml:space="preserve"> :. ===+**,^</text>
-    <text x="1575" y="1406.9" xml:space="preserve">  ''.+oc~^,-`</text>
-    <text x="1575" y="1421.0" xml:space="preserve">   .::o+==~=</text>
-    <text x="1575" y="1435.1" xml:space="preserve">   .-,^=cc*'</text>
-    <text x="1575" y="1449.2" xml:space="preserve">   .=-~==o:</text>
-    <text x="1575" y="1463.2" xml:space="preserve">    ,**ccoo</text>
-    <text x="1575" y="1477.3" xml:space="preserve">     :oOQ0#`</text>
-    <text x="1575" y="1491.4" xml:space="preserve">      `#*c~</text>
-    <text x="1575" y="1505.5" xml:space="preserve">      .0</text>
-    <text x="1575" y="1519.6" xml:space="preserve">      .0</text>
-    <text x="1575" y="1533.6" xml:space="preserve">       #</text>
-    <text x="1575" y="1547.7" xml:space="preserve">       #</text>
-    <text x="1575" y="1561.8" xml:space="preserve">       #</text>
-    <text x="1575" y="1575.9" xml:space="preserve">       #</text>
-    <text x="1575" y="1590.0" xml:space="preserve">       0.</text>
-    <text x="1575" y="1604.0" xml:space="preserve">       O'</text>
-    <text x="1575" y="1618.1" xml:space="preserve">       C:</text>
-    <text x="1575" y="1632.2" xml:space="preserve">       o^</text>
-    <text x="1575" y="1646.3" xml:space="preserve">       *-</text>
-    <text x="1575" y="1660.4" xml:space="preserve">       +=</text>
-    <text x="1575" y="1674.4" xml:space="preserve">       ~+</text>
-    <text x="1575" y="1688.5" xml:space="preserve">       -c</text>
-    <text x="1575" y="1702.6" xml:space="preserve">       ^o</text>
-    <text x="1575" y="1716.7" xml:space="preserve">       :O</text>
-    <text x="1575" y="1730.8" xml:space="preserve">       'Q</text>
-    <text x="1575" y="1744.8" xml:space="preserve">       `0</text>
-    <text x="1575" y="1758.9" xml:space="preserve">       .#</text>
-    <text x="1575" y="1773.0" xml:space="preserve">        %</text>
-    <text x="1575" y="1787.1" xml:space="preserve">        8</text>
-    <text x="1575" y="1801.2" xml:space="preserve">        8</text>
-    <text x="1575" y="1815.2" xml:space="preserve">        8</text>
-    <text x="1575" y="1829.3" xml:space="preserve">        8</text>
-    <text x="1575" y="1843.4" xml:space="preserve">        8</text>
-    <text x="1575" y="1857.5" xml:space="preserve">        8</text>
-    <text x="1575" y="1871.6" xml:space="preserve">        8</text>
-    <text x="1575" y="1885.6" xml:space="preserve">        8</text>
-    <text x="1575" y="1899.7" xml:space="preserve">        8</text>
-    <text x="1575" y="1913.8" xml:space="preserve">        %</text>
-    <text x="1575" y="1927.9" xml:space="preserve">       .#</text>
-    <text x="1575" y="1942.0" xml:space="preserve">       '0</text>
-    <text x="1575" y="1956.0" xml:space="preserve">       :O</text>
-    <text x="1575" y="1970.1" xml:space="preserve">       ^o</text>
-    <text x="1575" y="1984.2" xml:space="preserve">       -*</text>
+    <text x="1575" y="1012.7" xml:space="preserve">       ..</text>
+    <text x="1575" y="1026.8" xml:space="preserve">     ````.:</text>
+    <text x="1575" y="1040.8" xml:space="preserve">      ,``,</text>
+    <text x="1575" y="1054.9" xml:space="preserve">      ,``,</text>
+    <text x="1575" y="1069.0" xml:space="preserve"> `    ,'',</text>
+    <text x="1575" y="1083.1" xml:space="preserve"> `:    -^`</text>
+    <text x="1575" y="1097.2" xml:space="preserve">   :.  ~~      .</text>
+    <text x="1575" y="1111.2" xml:space="preserve">    -:,+~    `:</text>
+    <text x="1575" y="1125.3" xml:space="preserve">   `-^-+c:  :`</text>
+    <text x="1575" y="1139.4" xml:space="preserve"> :. ===+**,^</text>
+    <text x="1575" y="1153.5" xml:space="preserve">  '`.+oc~^,^`</text>
+    <text x="1575" y="1167.6" xml:space="preserve">   .::o+==~=  '.</text>
+    <text x="1575" y="1181.6" xml:space="preserve">   .-,^=cc*'.:</text>
+    <text x="1575" y="1195.7" xml:space="preserve"> ` .=-~==o:`'</text>
+    <text x="1575" y="1209.8" xml:space="preserve"> `: ,**c+~^-</text>
+    <text x="1575" y="1223.9" xml:space="preserve">   :.:C+~--~`</text>
+    <text x="1575" y="1238.0" xml:space="preserve">    -^=**+=~ `:</text>
+    <text x="1575" y="1252.0" xml:space="preserve">   `-^--*C~ :`</text>
+    <text x="1575" y="1266.1" xml:space="preserve"> :. ===+**,^</text>
+    <text x="1575" y="1280.2" xml:space="preserve">  '`.+oc~^,-`</text>
+    <text x="1575" y="1294.3" xml:space="preserve">   .::o+==~=  '.</text>
+    <text x="1575" y="1308.4" xml:space="preserve">   .-,^=cc*'.:</text>
+    <text x="1575" y="1322.4" xml:space="preserve"> ` .=-~==o:`'</text>
+    <text x="1575" y="1336.5" xml:space="preserve"> `: ,**c+~^-</text>
+    <text x="1575" y="1350.6" xml:space="preserve">   :.:C+~--~`</text>
+    <text x="1575" y="1364.7" xml:space="preserve">    -^=**+=~ `:</text>
+    <text x="1575" y="1378.8" xml:space="preserve">   `-^--+C~ :`</text>
+    <text x="1575" y="1392.8" xml:space="preserve"> :. ===+**,^</text>
+    <text x="1575" y="1406.9" xml:space="preserve">  ''.+oc~^,-`</text>
+    <text x="1575" y="1421.0" xml:space="preserve">   .::o+==~=</text>
+    <text x="1575" y="1435.1" xml:space="preserve">   .-,^=cc*'</text>
+    <text x="1575" y="1449.2" xml:space="preserve">   .=-~==o:</text>
+    <text x="1575" y="1463.2" xml:space="preserve">    ,**ccoo</text>
+    <text x="1575" y="1477.3" xml:space="preserve">     :oOQ0#`</text>
+    <text x="1575" y="1491.4" xml:space="preserve">      `#*c~</text>
+    <text x="1575" y="1505.5" xml:space="preserve">      .0</text>
+    <text x="1575" y="1519.6" xml:space="preserve">      .0</text>
+    <text x="1575" y="1533.6" xml:space="preserve">       #</text>
+    <text x="1575" y="1547.7" xml:space="preserve">       #</text>
+    <text x="1575" y="1561.8" xml:space="preserve">       #</text>
+    <text x="1575" y="1575.9" xml:space="preserve">       #</text>
+    <text x="1575" y="1590.0" xml:space="preserve">       0.</text>
+    <text x="1575" y="1604.0" xml:space="preserve">       O'</text>
+    <text x="1575" y="1618.1" xml:space="preserve">       C:</text>
+    <text x="1575" y="1632.2" xml:space="preserve">       o^</text>
+    <text x="1575" y="1646.3" xml:space="preserve">       *-</text>
+    <text x="1575" y="1660.4" xml:space="preserve">       +=</text>
+    <text x="1575" y="1674.4" xml:space="preserve">       ~+</text>
+    <text x="1575" y="1688.5" xml:space="preserve">       -c</text>
+    <text x="1575" y="1702.6" xml:space="preserve">       ^o</text>
+    <text x="1575" y="1716.7" xml:space="preserve">       :O</text>
+    <text x="1575" y="1730.8" xml:space="preserve">       'Q</text>
+    <text x="1575" y="1744.8" xml:space="preserve">       `0</text>
+    <text x="1575" y="1758.9" xml:space="preserve">       .#</text>
+    <text x="1575" y="1773.0" xml:space="preserve">        %</text>
+    <text x="1575" y="1787.1" xml:space="preserve">        8</text>
+    <text x="1575" y="1801.2" xml:space="preserve">        8</text>
+    <text x="1575" y="1815.2" xml:space="preserve">        8</text>
+    <text x="1575" y="1829.3" xml:space="preserve">        8</text>
+    <text x="1575" y="1843.4" xml:space="preserve">        8</text>
+    <text x="1575" y="1857.5" xml:space="preserve">        8</text>
+    <text x="1575" y="1871.6" xml:space="preserve">        8</text>
+    <text x="1575" y="1885.6" xml:space="preserve">        8</text>
+    <text x="1575" y="1899.7" xml:space="preserve">        8</text>
+    <text x="1575" y="1913.8" xml:space="preserve">        %</text>
+    <text x="1575" y="1927.9" xml:space="preserve">       .#</text>
+    <text x="1575" y="1942.0" xml:space="preserve">       '0</text>
+    <text x="1575" y="1956.0" xml:space="preserve">       :O</text>
+    <text x="1575" y="1970.1" xml:space="preserve">       ^o</text>
+    <text x="1575" y="1984.2" xml:space="preserve">       -*</text>
     <text x="1575" y="1998.3" xml:space="preserve">       ::</text>
   </g>
   <g clip-path="url(#winClip)" font-family="Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" font-size="12" fill="#333333" xml:space="preserve">
-    <text x="70" y="373.8" xml:space="preserve">                                                    :`</text>
-    <text x="70" y="389.2" xml:space="preserve">                                                   -~:</text>
-    <text x="70" y="404.5" xml:space="preserve">                                                  ~+=^       '</text>
-    <text x="70" y="419.9" xml:space="preserve">                                        :        ,co*,    '-~:</text>
-    <text x="70" y="435.3" xml:space="preserve">                                      :~-        +OOc  ,--:</text>
-    <text x="70" y="450.6" xml:space="preserve">               `           :-.      `===,        ~#Q=--`</text>
-    <text x="70" y="466.0" xml:space="preserve">            .,~:        .^==^      `ccc+       '^-=:</text>
-    <text x="70" y="481.3" xml:space="preserve">           ^+=~        ,*c*~       cQOc.  `^---'</text>
-    <text x="70" y="496.7" xml:space="preserve">         .*cc*'       -OOo~        0#o-^^^^Q0Qo=,.</text>
-    <text x="70" y="512.1" xml:space="preserve">         cQOc'        #0c^:,-~~^^^^,`       ^cCcc*-'</text>
-    <text x="70" y="527.4" xml:space="preserve">        `%#c^^^~c*-^^^-^,'` `Q0O+,            .:^^-~-'</text>
-    <text x="70" y="542.8" xml:space="preserve">  ^^^^^^,'.    .O0Qc^        .=Coc*^                 .</text>
+    <text x="70" y="373.8" xml:space="preserve">                                                    :`</text>
+    <text x="70" y="389.2" xml:space="preserve">                                                   -~:</text>
+    <text x="70" y="404.5" xml:space="preserve">                                                  ~+=^       '</text>
+    <text x="70" y="419.9" xml:space="preserve">                                        :        ,co*,    '-~:</text>
+    <text x="70" y="435.3" xml:space="preserve">                                      :~-        +OOc  ,--:</text>
+    <text x="70" y="450.6" xml:space="preserve">               `           :-.      `===,        ~#Q=--`</text>
+    <text x="70" y="466.0" xml:space="preserve">            .,~:        .^==^      `ccc+       '^-=:</text>
+    <text x="70" y="481.3" xml:space="preserve">           ^+=~        ,*c*~       cQOc.  `^---'</text>
+    <text x="70" y="496.7" xml:space="preserve">         .*cc*'       -OOo~        0#o-^^^^Q0Qo=,.</text>
+    <text x="70" y="512.1" xml:space="preserve">         cQOc'        #0c^:,-~~^^^^,`       ^cCcc*-'</text>
+    <text x="70" y="527.4" xml:space="preserve">        `%#c^^^~c*-^^^-^,'` `Q0O+,            .:^^-~-'</text>
+    <text x="70" y="542.8" xml:space="preserve">  ^^^^^^,'.    .O0Qc^        .=Coc*^                 .</text>
     <text x="70" y="558.1" xml:space="preserve">                 ~Coc+,        .^=+=~`</text>
   </g>
   <g clip-path="url(#winClip)" font-family="Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" font-size="12" fill="#333333" xml:space="preserve">
-    <text x="110" y="2063.8" xml:space="preserve">                    .   .</text>
-    <text x="110" y="2079.2" xml:space="preserve">                 ``,^^^^,^'`.</text>
-    <text x="110" y="2094.5" xml:space="preserve">              `'^^===++===+^^:`</text>
-    <text x="110" y="2109.9" xml:space="preserve">            `,-~==*oooCoooc+=~-^`.</text>
-    <text x="110" y="2125.3" xml:space="preserve">           :,-=+*CCQ0Q0Q0QOCc+=-,,</text>
-    <text x="110" y="2140.6" xml:space="preserve">          `,^~+coO0Cc+c+c*#QCc*=-,:</text>
-    <text x="110" y="2156.0" xml:space="preserve">          .^~=+cCQ0:08&amp;&amp;#^C0Oo*=~-'</text>
-    <text x="110" y="2171.3" xml:space="preserve">           ,^=*oCQ#c+Q%0c~#QOo*=-,`</text>
-    <text x="110" y="2186.7" xml:space="preserve">           .^-=*oCO00*C*O0QCoc+-,'</text>
-    <text x="110" y="2202.1" xml:space="preserve">            '^~=+*coCOOOCooc+=~~'.</text>
-    <text x="110" y="2217.4" xml:space="preserve">             ',^-~+=*c**c+=~-^,,</text>
-    <text x="110" y="2232.8" xml:space="preserve">               .:,---^-^-~^^,`</text>
-    <text x="110" y="2248.1" xml:space="preserve">                    .. ^,</text>
-    <text x="110" y="2263.5" xml:space="preserve">                       =.</text>
-    <text x="110" y="2278.9" xml:space="preserve">                       +</text>
-    <text x="110" y="2294.2" xml:space="preserve">                      ~`</text>
-    <text x="110" y="2309.6" xml:space="preserve">                     .=</text>
-    <text x="110" y="2324.9" xml:space="preserve">                     =</text>
-    <text x="110" y="2340.3" xml:space="preserve">                    ,c.</text>
-    <text x="110" y="2355.7" xml:space="preserve">                    =0O=.</text>
-    <text x="110" y="2371.0" xml:space="preserve">                    'Coc+`</text>
-    <text x="110" y="2386.4" xml:space="preserve">                    ~:~==-</text>
-    <text x="110" y="2401.7" xml:space="preserve">                   -:  `,^`</text>
+    <text x="110" y="2063.8" xml:space="preserve">                    .   .</text>
+    <text x="110" y="2079.2" xml:space="preserve">                 ``,^^^^,^'`.</text>
+    <text x="110" y="2094.5" xml:space="preserve">              `'^^===++===+^^:`</text>
+    <text x="110" y="2109.9" xml:space="preserve">            `,-~==*oooCoooc+=~-^`.</text>
+    <text x="110" y="2125.3" xml:space="preserve">           :,-=+*CCQ0Q0Q0QOCc+=-,,</text>
+    <text x="110" y="2140.6" xml:space="preserve">          `,^~+coO0Cc+c+c*#QCc*=-,:</text>
+    <text x="110" y="2156.0" xml:space="preserve">          .^~=+cCQ0:08&amp;&amp;#^C0Oo*=~-'</text>
+    <text x="110" y="2171.3" xml:space="preserve">           ,^=*oCQ#c+Q%0c~#QOo*=-,`</text>
+    <text x="110" y="2186.7" xml:space="preserve">           .^-=*oCO00*C*O0QCoc+-,'</text>
+    <text x="110" y="2202.1" xml:space="preserve">            '^~=+*coCOOOCooc+=~~'.</text>
+    <text x="110" y="2217.4" xml:space="preserve">             ',^-~+=*c**c+=~-^,,</text>
+    <text x="110" y="2232.8" xml:space="preserve">               .:,---^-^-~^^,`</text>
+    <text x="110" y="2248.1" xml:space="preserve">                    .. ^,</text>
+    <text x="110" y="2263.5" xml:space="preserve">                       =.</text>
+    <text x="110" y="2278.9" xml:space="preserve">                       +</text>
+    <text x="110" y="2294.2" xml:space="preserve">                      ~`</text>
+    <text x="110" y="2309.6" xml:space="preserve">                     .=</text>
+    <text x="110" y="2324.9" xml:space="preserve">                     =</text>
+    <text x="110" y="2340.3" xml:space="preserve">                    ,c.</text>
+    <text x="110" y="2355.7" xml:space="preserve">                    =0O=.</text>
+    <text x="110" y="2371.0" xml:space="preserve">                    'Coc+`</text>
+    <text x="110" y="2386.4" xml:space="preserve">                    ~:~==-</text>
+    <text x="110" y="2401.7" xml:space="preserve">                   -:  `,^`</text>
     <text x="110" y="2417.1" xml:space="preserve">                  ,       .</text>
   </g>
   <g clip-path="url(#winClip)" font-family="Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" font-size="24" fill="#1a1a1a" xml:space="preserve">
@@ -500,7 +500,7 @@
     <text x="532" y="2293.7" xml:space="preserve">  ┌─[ investissement ]·· lignes de code écrites (ajouts seuls)</text>
     <text x="532" y="2324.4" xml:space="preserve">  │</text>
     <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 172 393 lignes</text>
-    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 33 502 lignes</text>
+    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 33 072 lignes</text>
     <text x="532" y="2416.6" xml:space="preserve">  │</text>
     <text x="532" y="2447.3" xml:space="preserve">  │   projets publics</text>
     <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~44k · VRchat-tracking ~19k · gogames ~11k</text>

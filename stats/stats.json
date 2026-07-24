@@ -1,11 +1,11 @@
 {
   "generatedAt": "2026-07-24",
   "totalAll": 172393,
-  "total7d": 33502,
+  "total7d": 33072,
   "publicAll": 103609,
   "privateAll": 68784,
   "public7d": 6589,
-  "private7d": 26913,
+  "private7d": 26483,
   "ecritsAll": 38482,
   "ecrits7d": 18688,
   "ecartesAll": 0,
@@ -34,7 +34,7 @@
       "private": true,
       "lang": "Rust",
       "all": 42411,
-      "d7": 10515,
+      "d7": 10085,
       "ecrits": 13241,
       "ecrits7d": 2960,
       "ecartes": 0
