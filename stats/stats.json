@@ -1,102 +1,153 @@
 {
   "generatedAt": "2026-07-24",
-  "totalAll": 1562409,
-  "total7d": 1270402,
-  "publicAll": 196131,
-  "privateAll": 1366278,
-  "public7d": 6206,
-  "private7d": 1264196,
+  "totalAll": 172393,
+  "total7d": 33502,
+  "publicAll": 103609,
+  "privateAll": 68784,
+  "public7d": 6589,
+  "private7d": 26913,
+  "ecritsAll": 38482,
+  "ecrits7d": 18688,
+  "ecartesAll": 0,
+  "methode": {
+    "regle": "liste blanche — seules les extensions de code listées sont comptées",
+    "comptage": "ajouts seuls — une ligne supprimée n'a pas été écrite",
+    "fenetre": "date d'AUTEUR, insensible aux rebases",
+    "plafondParFichier": 50000,
+    "botsExclus": true,
+    "ecritsComptesAPart": true,
+    "note": "assets 3D, images, données, journaux, dépendances embarquées et fichiers générés ne sont jamais comptés"
+  },
   "repos": [
     {
-      "name": "spike01-unreal",
-      "private": true,
-      "lang": "Python",
-      "all": 1235586,
-      "d7": 1228778
+      "name": "GlucoseGit",
+      "private": false,
+      "lang": "TypeScript",
+      "all": 44855,
+      "d7": 0,
+      "ecrits": 6019,
+      "ecrits7d": 0,
+      "ecartes": 0
     },
     {
       "name": "web3game-core",
       "private": true,
       "lang": "Rust",
-      "all": 71774,
-      "d7": 11698
-    },
-    {
-      "name": "GlucoseGit",
-      "private": false,
-      "lang": "TypeScript",
-      "all": 60537,
-      "d7": 4
-    },
-    {
-      "name": "ultra-sync",
-      "private": false,
-      "lang": "Rust",
-      "all": 55187,
-      "d7": 0
-    },
-    {
-      "name": "eegprev",
-      "private": false,
-      "lang": "EJS",
-      "all": 31042,
-      "d7": 0
-    },
-    {
-      "name": "web3game-logs",
-      "private": true,
-      "lang": null,
-      "all": 28973,
-      "d7": 0
+      "all": 42411,
+      "d7": 10515,
+      "ecrits": 13241,
+      "ecrits7d": 2960,
+      "ecartes": 0
     },
     {
       "name": "VRchatFACE-HAND-ARM-tracking",
       "private": false,
       "lang": "Rust",
-      "all": 22760,
-      "d7": 0
+      "all": 19049,
+      "d7": 0,
+      "ecrits": 1396,
+      "ecrits7d": 0,
+      "ecartes": 0
     },
     {
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 16492,
-      "d7": 10267
+      "all": 15470,
+      "d7": 9546,
+      "ecrits": 51,
+      "ecrits7d": 51,
+      "ecartes": 0
     },
     {
       "name": "gogames",
       "private": false,
       "lang": "JavaScript",
-      "all": 15788,
-      "d7": 0
+      "all": 11644,
+      "d7": 3851,
+      "ecrits": 150,
+      "ecrits7d": 149,
+      "ecartes": 0
     },
     {
-      "name": "web3game-notes",
+      "name": "ultra-sync",
+      "private": false,
+      "lang": "Rust",
+      "all": 11302,
+      "d7": 0,
+      "ecrits": 790,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "eegprev",
+      "private": false,
+      "lang": "EJS",
+      "all": 10902,
+      "d7": 0,
+      "ecrits": 63,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "spike01-unreal",
       "private": true,
-      "lang": null,
-      "all": 10141,
-      "d7": 10141
+      "lang": "Python",
+      "all": 7938,
+      "d7": 3887,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0
     },
     {
       "name": "Simulateur-d-emergence-D-eterministe",
       "private": false,
       "lang": "Rust",
-      "all": 8274,
-      "d7": 3659
+      "all": 5764,
+      "d7": 2645,
+      "ecrits": 1492,
+      "ecrits7d": 250,
+      "ecartes": 0
     },
     {
       "name": "hub01-unreal",
       "private": true,
       "lang": "C++",
-      "all": 3312,
-      "d7": 3312
+      "all": 2965,
+      "d7": 2965,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0
     },
     {
       "name": "web3game",
       "private": false,
       "lang": null,
-      "all": 2543,
-      "d7": 2543
+      "all": 93,
+      "d7": 93,
+      "ecrits": 5137,
+      "ecrits7d": 5137,
+      "ecartes": 0
+    },
+    {
+      "name": "web3game-logs",
+      "private": true,
+      "lang": null,
+      "all": 0,
+      "d7": 0,
+      "ecrits": 2,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "web3game-notes",
+      "private": true,
+      "lang": null,
+      "all": 0,
+      "d7": 0,
+      "ecrits": 10141,
+      "ecrits7d": 10141,
+      "ecartes": 0
     }
   ]
 }

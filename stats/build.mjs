@@ -34,7 +34,10 @@ function rowCount(text) {
 // ---- chiffres -> texte ----
 const S = JSON.parse(rd('stats/stats.json'));
 const grp = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');   // 196000 -> "196 000"
-const kk = n => '~' + Math.round(n / 1000) + 'k';
+// Arrondi vers le BAS, jamais vers le haut. `Math.round` affichait « ~50k » pour 49 770 : sur une
+// page dont la règle est « ne jamais surestimer », l'arrondi doit aller dans le sens de la règle.
+// Le filtre `r.all >= 1000` plus bas garantit qu'on ne peut pas tomber sur un « ~0k ».
+const kk = n => '~' + Math.floor(n / 1000) + 'k';
 const SHORT = {
   'VRchatFACE-HAND-ARM-tracking': 'VRchat-tracking',
   'Simulateur-d-emergence-D-eterministe': 'simulateur',
@@ -65,6 +68,9 @@ let content = rd('stats/content.tmpl.txt')
   .replace('{{PUBLIC_LINES}}', wrapPublic(pub))
   .replace('{{N_PRIV}}', priv.length + (priv.length > 1 ? ' repos' : ' repo'))
   .replace('{{PRIV_ALL}}', grp(privAll))
+  // La documentation est du vrai travail, mais ce n'est pas du code : elle a sa ligne, jamais
+  // l'addition. Un total qui mélange les deux serait déjà un chiffre un peu faux.
+  .replace('{{ECRITS}}', grp(S.ecritsAll ?? 0))
   .replace('{{DATE}}', S.generatedAt);
 
 // ---- spécimens ASCII (mêmes positions que le visuel) ----
@@ -90,6 +96,28 @@ const specs = layout.map((s, idx) => {
   }
   return blk(txt, s.x, s.y, s.font, G, extra);
 }).join('\n');
+// GARDE ANTI-DÉBORDEMENT. Le texte est découpé par `winClip` : ce qui dépasse le bas du cadre
+// n'est pas tronqué avec des points de suspension, il DISPARAÎT — silencieusement. C'est
+// exactement ce qui vient d'arriver en ajoutant deux lignes au gabarit : la dernière ligne de la
+// page ne s'affichait plus, et rien ne le disait. Le jour où un 7ᵉ dépôt public dépasse les
+// 1 000 lignes, `wrapPublic` rendra une ligne de plus et le problème reviendrait.
+// Alors on préfère un job en échec, visible, à une page amputée que personne ne remarque.
+function verifierQueTexteTientDansLeCadre(texte, y, font) {
+  const m = /<clipPath id="winClip">\s*<rect[^>]*\by="([\d.]+)"[^>]*\bheight="([\d.]+)"/.exec(rd(HERO));
+  if (!m) return;                                   // cadre introuvable : on ne bloque pas sur une supposition
+  const bas = parseFloat(m[1]) + parseFloat(m[2]);
+  let lignes = texte.split('\n');
+  while (lignes.length && !lignes[0].trim()) lignes.shift();
+  while (lignes.length && !lignes[lignes.length - 1].trim()) lignes.pop();
+  const derniere = y + (lignes.length - 0.1) * font * 1.28;
+  if (derniere > bas) {
+    throw new Error(
+      `la page dépasse le cadre : dernière ligne à ${derniere.toFixed(0)}, le cadre s'arrête à ${bas}. ` +
+      `${lignes.length} lignes rendues — raccourcis le gabarit (stats/content.tmpl.txt) ou agrandis le cadre.`);
+  }
+  console.error(`page : ${lignes.length} lignes, dernière à ${derniere.toFixed(0)} (cadre ${bas}) — ça tient.`);
+}
+verifierQueTexteTientDansLeCadre(content, 300, 24);
 const text = blk(content, null, 300, 24, '#1a1a1a');
 const payload = `  <!-- README page -->\n${fadeDefs}${specs}\n${text}\n  <!-- /README page -->`;
 

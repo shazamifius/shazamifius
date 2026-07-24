@@ -62,7 +62,7 @@ shazamifius@github ~ $ cat glucose.md
 
 shazamifius@github ~ $ git log --numstat | activité
 
-  ┌─[ investissement ]·· lignes touchées (ajouts + suppressions)
+  ┌─[ investissement ]·· lignes de code écrites (ajouts seuls)
   │
   │   tout-temps · privé + public .......... {{TOTAL_ALL}} lignes
   │   7 derniers jours · privé + public .... {{TOTAL_7D}} lignes
@@ -70,6 +70,9 @@ shazamifius@github ~ $ git log --numstat | activité
   │   projets publics
 {{PUBLIC_LINES}}
   │   privé ({{N_PRIV}}) · {{PRIV_ALL}} lignes
+  │   + {{ECRITS}} lignes de documentation, comptées à part
+  │
+  │   ( code source seul · objets 3D, données et généré exclus )
   │
   │   au {{DATE}} · recalculé tout seul, chaque jour (GitHub Action)
   └───
