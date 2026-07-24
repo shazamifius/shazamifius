@@ -1,18 +1,25 @@
 {
-  "generatedAt": "2026-07-23",
-  "totalAll": 316687,
-  "total7d": 24865,
-  "publicAll": 265282,
-  "privateAll": 51405,
-  "public7d": 15466,
-  "private7d": 9399,
+  "generatedAt": "2026-07-24",
+  "totalAll": 1562409,
+  "total7d": 1270402,
+  "publicAll": 196131,
+  "privateAll": 1366278,
+  "public7d": 6206,
+  "private7d": 1264196,
   "repos": [
     {
-      "name": "web3game",
-      "private": false,
+      "name": "spike01-unreal",
+      "private": true,
+      "lang": "Python",
+      "all": 1235586,
+      "d7": 1228778
+    },
+    {
+      "name": "web3game-core",
+      "private": true,
       "lang": "Rust",
-      "all": 71694,
-      "d7": 11803
+      "all": 71774,
+      "d7": 11698
     },
     {
       "name": "GlucoseGit",
@@ -50,6 +57,13 @@
       "d7": 0
     },
     {
+      "name": "web3game-launcher",
+      "private": true,
+      "lang": "Rust",
+      "all": 16492,
+      "d7": 10267
+    },
+    {
       "name": "gogames",
       "private": false,
       "lang": "JavaScript",
@@ -57,11 +71,11 @@
       "d7": 0
     },
     {
-      "name": "web3game-launcher",
+      "name": "web3game-notes",
       "private": true,
-      "lang": "Rust",
-      "all": 15155,
-      "d7": 8930
+      "lang": null,
+      "all": 10141,
+      "d7": 10141
     },
     {
       "name": "Simulateur-d-emergence-D-eterministe",
@@ -71,11 +85,18 @@
       "d7": 3659
     },
     {
-      "name": "spike01-unreal",
+      "name": "hub01-unreal",
       "private": true,
       "lang": "C++",
-      "all": 7277,
-      "d7": 469
+      "all": 3312,
+      "d7": 3312
+    },
+    {
+      "name": "web3game",
+      "private": false,
+      "lang": null,
+      "all": 2543,
+      "d7": 2543
     }
   ]
 }
