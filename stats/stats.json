@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-26",
-  "totalAll": 175759,
-  "total7d": 28613,
-  "publicAll": 103609,
-  "privateAll": 72150,
-  "public7d": 3944,
-  "private7d": 24669,
-  "ecritsAll": 39059,
-  "ecrits7d": 19015,
+  "generatedAt": "2026-07-27",
+  "totalAll": 179993,
+  "total7d": 29499,
+  "publicAll": 103617,
+  "privateAll": 76376,
+  "public7d": 3952,
+  "private7d": 25547,
+  "ecritsAll": 39219,
+  "ecrits7d": 19175,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -20,6 +20,16 @@
   },
   "repos": [
     {
+      "name": "web3game-core",
+      "private": true,
+      "lang": "Rust",
+      "all": 46160,
+      "d7": 11692,
+      "ecrits": 13241,
+      "ecrits7d": 2960,
+      "ecartes": 0
+    },
+    {
       "name": "GlucoseGit",
       "private": false,
       "lang": "TypeScript",
@@ -30,13 +40,13 @@
       "ecartes": 0
     },
     {
-      "name": "web3game-core",
+      "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 43953,
-      "d7": 10816,
-      "ecrits": 13241,
-      "ecrits7d": 2960,
+      "all": 19313,
+      "d7": 7003,
+      "ecrits": 51,
+      "ecrits7d": 51,
       "ecartes": 0
     },
     {
@@ -50,21 +60,11 @@
       "ecartes": 0
     },
     {
-      "name": "web3game-launcher",
-      "private": true,
-      "lang": "Rust",
-      "all": 17294,
-      "d7": 7001,
-      "ecrits": 51,
-      "ecrits7d": 51,
-      "ecartes": 0
-    },
-    {
       "name": "gogames",
       "private": false,
       "lang": "JavaScript",
-      "all": 11644,
-      "d7": 3851,
+      "all": 11652,
+      "d7": 3859,
       "ecrits": 150,
       "ecrits7d": 149,
       "ecartes": 0
@@ -145,8 +145,8 @@
       "lang": null,
       "all": 0,
       "d7": 0,
-      "ecrits": 10718,
-      "ecrits7d": 10718,
+      "ecrits": 10878,
+      "ecrits7d": 10878,
       "ecartes": 0
     }
   ]
