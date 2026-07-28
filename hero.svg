@@ -499,18 +499,18 @@
     <text x="532" y="2263.0" xml:space="preserve"></text>
     <text x="532" y="2293.7" xml:space="preserve">  ┌─[ investissement ]·· lignes de code écrites (ajouts seuls)</text>
     <text x="532" y="2324.4" xml:space="preserve">  │</text>
-    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 179 993 lignes</text>
-    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 29 499 lignes</text>
+    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 199 771 lignes</text>
+    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 47 274 lignes</text>
     <text x="532" y="2416.6" xml:space="preserve">  │</text>
     <text x="532" y="2447.3" xml:space="preserve">  │   projets publics</text>
-    <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~44k · VRchat-tracking ~19k · gogames ~11k</text>
+    <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~44k · VRchat-tracking ~19k · gogames ~12k</text>
     <text x="532" y="2508.8" xml:space="preserve">  │     ultra-sync ~11k · eegprev ~10k · simulateur ~5k</text>
-    <text x="532" y="2539.5" xml:space="preserve">  │   privé (6 repos) · 76 376 lignes</text>
-    <text x="532" y="2570.2" xml:space="preserve">  │   + 39 219 lignes de documentation, comptées à part</text>
+    <text x="532" y="2539.5" xml:space="preserve">  │   privé (7 repos) · 94 818 lignes</text>
+    <text x="532" y="2570.2" xml:space="preserve">  │   + 39 986 lignes de documentation, comptées à part</text>
     <text x="532" y="2600.9" xml:space="preserve">  │</text>
     <text x="532" y="2631.6" xml:space="preserve">  │   ( code source seul · objets 3D, données et généré exclus )</text>
     <text x="532" y="2662.4" xml:space="preserve">  │</text>
-    <text x="532" y="2693.1" xml:space="preserve">  │   au 2026-07-27 · recalculé tout seul, chaque jour (GitHub Action)</text>
+    <text x="532" y="2693.1" xml:space="preserve">  │   au 2026-07-28 · recalculé tout seul, chaque jour (GitHub Action)</text>
     <text x="532" y="2723.8" xml:space="preserve">  └───</text>
     <text x="532" y="2754.5" xml:space="preserve"></text>
     <text x="532" y="2785.2" xml:space="preserve"></text>

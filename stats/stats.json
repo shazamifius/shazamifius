@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-27",
-  "totalAll": 179993,
-  "total7d": 29499,
-  "publicAll": 103617,
-  "privateAll": 76376,
-  "public7d": 3952,
-  "private7d": 25547,
-  "ecritsAll": 39219,
-  "ecrits7d": 19175,
+  "generatedAt": "2026-07-28",
+  "totalAll": 199771,
+  "total7d": 47274,
+  "publicAll": 104953,
+  "privateAll": 94818,
+  "public7d": 5288,
+  "private7d": 41986,
+  "ecritsAll": 39986,
+  "ecrits7d": 19942,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -23,10 +23,10 @@
       "name": "web3game-core",
       "private": true,
       "lang": "Rust",
-      "all": 46160,
-      "d7": 11692,
-      "ecrits": 13241,
-      "ecrits7d": 2960,
+      "all": 50090,
+      "d7": 14310,
+      "ecrits": 13262,
+      "ecrits7d": 2981,
       "ecartes": 0
     },
     {
@@ -43,8 +43,8 @@
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 19313,
-      "d7": 7003,
+      "all": 22194,
+      "d7": 9632,
       "ecrits": 51,
       "ecrits7d": 51,
       "ecartes": 0
@@ -63,10 +63,20 @@
       "name": "gogames",
       "private": false,
       "lang": "JavaScript",
-      "all": 11652,
-      "d7": 3859,
-      "ecrits": 150,
-      "ecrits7d": 149,
+      "all": 12988,
+      "d7": 5195,
+      "ecrits": 200,
+      "ecrits7d": 199,
+      "ecartes": 0
+    },
+    {
+      "name": "genshinlearn",
+      "private": true,
+      "lang": "Rust",
+      "all": 11631,
+      "d7": 11631,
+      "ecrits": 611,
+      "ecrits7d": 611,
       "ecartes": 0
     },
     {
@@ -94,7 +104,7 @@
       "private": true,
       "lang": "Python",
       "all": 7938,
-      "d7": 3887,
+      "d7": 3448,
       "ecrits": 0,
       "ecrits7d": 0,
       "ecartes": 0
@@ -145,8 +155,8 @@
       "lang": null,
       "all": 0,
       "d7": 0,
-      "ecrits": 10878,
-      "ecrits7d": 10878,
+      "ecrits": 10963,
+      "ecrits7d": 10963,
       "ecartes": 0
     }
   ]
