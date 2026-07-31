@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-30",
-  "totalAll": 204768,
-  "total7d": 40549,
+  "generatedAt": "2026-07-31",
+  "totalAll": 206277,
+  "total7d": 37215,
   "publicAll": 104953,
-  "privateAll": 99815,
-  "public7d": 3700,
-  "private7d": 36849,
+  "privateAll": 101324,
+  "public7d": 3607,
+  "private7d": 33608,
   "ecritsAll": 40218,
-  "ecrits7d": 19683,
+  "ecrits7d": 7066,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -23,10 +23,10 @@
       "name": "web3game-core",
       "private": true,
       "lang": "Rust",
-      "all": 52368,
-      "d7": 10640,
+      "all": 53026,
+      "d7": 11247,
       "ecrits": 13494,
-      "ecrits7d": 2872,
+      "ecrits7d": 2860,
       "ecartes": 0
     },
     {
@@ -43,8 +43,8 @@
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 24913,
-      "d7": 11107,
+      "all": 25764,
+      "d7": 10730,
       "ecrits": 51,
       "ecrits7d": 0,
       "ecartes": 0
@@ -104,7 +104,7 @@
       "private": true,
       "lang": "Python",
       "all": 7938,
-      "d7": 3448,
+      "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
       "ecartes": 0
@@ -124,7 +124,7 @@
       "private": true,
       "lang": "C++",
       "all": 2965,
-      "d7": 23,
+      "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
       "ecartes": 0
@@ -134,9 +134,9 @@
       "private": false,
       "lang": null,
       "all": 93,
-      "d7": 93,
+      "d7": 0,
       "ecrits": 5137,
-      "ecrits7d": 5137,
+      "ecrits7d": 2673,
       "ecartes": 0
     },
     {
@@ -156,7 +156,7 @@
       "all": 0,
       "d7": 0,
       "ecrits": 10963,
-      "ecrits7d": 10963,
+      "ecrits7d": 822,
       "ecartes": 0
     }
   ]
