@@ -500,7 +500,7 @@
     <text x="532" y="2293.7" xml:space="preserve">  ┌─[ investissement ]·· lignes de code écrites (ajouts seuls)</text>
     <text x="532" y="2324.4" xml:space="preserve">  │</text>
     <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 206 277 lignes</text>
-    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 37 215 lignes</text>
+    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 33 850 lignes</text>
     <text x="532" y="2416.6" xml:space="preserve">  │</text>
     <text x="532" y="2447.3" xml:space="preserve">  │   projets publics</text>
     <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~44k · VRchat-tracking ~19k · gogames ~12k</text>
@@ -510,7 +510,7 @@
     <text x="532" y="2600.9" xml:space="preserve">  │</text>
     <text x="532" y="2631.6" xml:space="preserve">  │   ( code source seul · objets 3D, données et généré exclus )</text>
     <text x="532" y="2662.4" xml:space="preserve">  │</text>
-    <text x="532" y="2693.1" xml:space="preserve">  │   au 2026-07-31 · recalculé tout seul, chaque jour (GitHub Action)</text>
+    <text x="532" y="2693.1" xml:space="preserve">  │   au 2026-08-01 · recalculé tout seul, chaque jour (GitHub Action)</text>
     <text x="532" y="2723.8" xml:space="preserve">  └───</text>
     <text x="532" y="2754.5" xml:space="preserve"></text>
     <text x="532" y="2785.2" xml:space="preserve"></text>

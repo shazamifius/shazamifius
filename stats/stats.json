@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-31",
+  "generatedAt": "2026-08-01",
   "totalAll": 206277,
-  "total7d": 37215,
+  "total7d": 33850,
   "publicAll": 104953,
   "privateAll": 101324,
-  "public7d": 3607,
-  "private7d": 33608,
+  "public7d": 1344,
+  "private7d": 32506,
   "ecritsAll": 40218,
-  "ecrits7d": 7066,
+  "ecrits7d": 1339,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -24,9 +24,9 @@
       "private": true,
       "lang": "Rust",
       "all": 53026,
-      "d7": 11247,
+      "d7": 10598,
       "ecrits": 13494,
-      "ecrits7d": 2860,
+      "ecrits7d": 253,
       "ecartes": 0
     },
     {
@@ -44,7 +44,7 @@
       "private": true,
       "lang": "Rust",
       "all": 25764,
-      "d7": 10730,
+      "d7": 10277,
       "ecrits": 51,
       "ecrits7d": 0,
       "ecartes": 0
@@ -64,9 +64,9 @@
       "private": false,
       "lang": "JavaScript",
       "all": 12988,
-      "d7": 3607,
+      "d7": 1344,
       "ecrits": 200,
-      "ecrits7d": 100,
+      "ecrits7d": 50,
       "ecartes": 0
     },
     {
@@ -136,7 +136,7 @@
       "all": 93,
       "d7": 0,
       "ecrits": 5137,
-      "ecrits7d": 2673,
+      "ecrits7d": 0,
       "ecartes": 0
     },
     {
@@ -156,7 +156,7 @@
       "all": 0,
       "d7": 0,
       "ecrits": 10963,
-      "ecrits7d": 822,
+      "ecrits7d": 425,
       "ecartes": 0
     }
   ]
