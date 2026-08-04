@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-03",
-  "totalAll": 207491,
-  "total7d": 27498,
+  "generatedAt": "2026-08-04",
+  "totalAll": 236014,
+  "total7d": 35647,
   "publicAll": 104953,
-  "privateAll": 102538,
-  "public7d": 1336,
-  "private7d": 26162,
-  "ecritsAll": 40218,
-  "ecrits7d": 999,
+  "privateAll": 131061,
+  "public7d": 0,
+  "private7d": 35647,
+  "ecritsAll": 42737,
+  "ecrits7d": 2751,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -24,9 +24,9 @@
       "private": true,
       "lang": "Rust",
       "all": 53374,
-      "d7": 7214,
+      "d7": 3284,
       "ecrits": 13494,
-      "ecrits7d": 253,
+      "ecrits7d": 232,
       "ecartes": 0
     },
     {
@@ -44,7 +44,7 @@
       "private": true,
       "lang": "Rust",
       "all": 26630,
-      "d7": 7317,
+      "d7": 4436,
       "ecrits": 51,
       "ecrits7d": 0,
       "ecartes": 0
@@ -64,9 +64,19 @@
       "private": false,
       "lang": "JavaScript",
       "all": 12988,
-      "d7": 1336,
+      "d7": 0,
       "ecrits": 200,
-      "ecrits7d": 50,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "cerveau-image-hlsl",
+      "private": true,
+      "lang": "C++",
+      "all": 11676,
+      "d7": 11676,
+      "ecrits": 0,
+      "ecrits7d": 0,
       "ecartes": 0
     },
     {
@@ -74,9 +84,9 @@
       "private": true,
       "lang": "Rust",
       "all": 11631,
-      "d7": 11631,
+      "d7": 0,
       "ecrits": 611,
-      "ecrits7d": 611,
+      "ecrits7d": 0,
       "ecartes": 0
     },
     {
@@ -110,6 +120,16 @@
       "ecartes": 0
     },
     {
+      "name": "glucose-notes",
+      "private": true,
+      "lang": "Rust",
+      "all": 7020,
+      "d7": 7020,
+      "ecrits": 117,
+      "ecrits7d": 117,
+      "ecartes": 0
+    },
+    {
       "name": "Simulateur-d-emergence-D-eterministe",
       "private": false,
       "lang": "Rust",
@@ -120,11 +140,71 @@
       "ecartes": 0
     },
     {
+      "name": "ai-shader-forge",
+      "private": true,
+      "lang": "Rust",
+      "all": 4211,
+      "d7": 4211,
+      "ecrits": 367,
+      "ecrits7d": 367,
+      "ecartes": 0
+    },
+    {
       "name": "hub01-unreal",
       "private": true,
       "lang": "C++",
-      "all": 2965,
-      "d7": 0,
+      "all": 3026,
+      "d7": 61,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "agent-atelier",
+      "private": true,
+      "lang": "Python",
+      "all": 1869,
+      "d7": 1869,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "mechaguardian",
+      "private": true,
+      "lang": "TypeScript",
+      "all": 1365,
+      "d7": 769,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "svg-lab",
+      "private": true,
+      "lang": "JavaScript",
+      "all": 1020,
+      "d7": 1020,
+      "ecrits": 7,
+      "ecrits7d": 7,
+      "ecartes": 0
+    },
+    {
+      "name": "projet-brutforce-hlsl",
+      "private": true,
+      "lang": "Python",
+      "all": 690,
+      "d7": 690,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0
+    },
+    {
+      "name": "discord-scroller",
+      "private": true,
+      "lang": "JavaScript",
+      "all": 611,
+      "d7": 611,
       "ecrits": 0,
       "ecrits7d": 0,
       "ecartes": 0
@@ -155,8 +235,8 @@
       "lang": null,
       "all": 0,
       "d7": 0,
-      "ecrits": 10963,
-      "ecrits7d": 85,
+      "ecrits": 12991,
+      "ecrits7d": 2028,
       "ecartes": 0
     }
   ]
