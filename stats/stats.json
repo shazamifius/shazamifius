@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-12",
-  "totalAll": 317171,
-  "total7d": 81157,
-  "publicAll": 118214,
-  "privateAll": 198957,
-  "public7d": 13261,
-  "private7d": 67896,
-  "ecritsAll": 48186,
-  "ecrits7d": 5449,
+  "generatedAt": "2026-08-13",
+  "totalAll": 320341,
+  "total7d": 82791,
+  "publicAll": 119106,
+  "privateAll": 201235,
+  "public7d": 14153,
+  "private7d": 68638,
+  "ecritsAll": 48843,
+  "ecrits7d": 6012,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -33,10 +33,10 @@
       "name": "web3game-core",
       "private": true,
       "lang": "Rust",
-      "all": 55151,
-      "d7": 1777,
-      "ecrits": 13651,
-      "ecrits7d": 157,
+      "all": 55343,
+      "d7": 1732,
+      "ecrits": 13665,
+      "ecrits7d": 171,
       "ecartes": 0
     },
     {
@@ -46,15 +46,15 @@
       "all": 44855,
       "d7": 0,
       "ecrits": 6113,
-      "ecrits7d": 94,
+      "ecrits7d": 0,
       "ecartes": 0
     },
     {
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 32297,
-      "d7": 5667,
+      "all": 34369,
+      "d7": 6809,
       "ecrits": 51,
       "ecrits7d": 0,
       "ecartes": 0
@@ -70,6 +70,16 @@
       "ecartes": 0
     },
     {
+      "name": "AegisEngine",
+      "private": false,
+      "lang": "Rust",
+      "all": 13864,
+      "d7": 13864,
+      "ecrits": 495,
+      "ecrits7d": 495,
+      "ecartes": 0
+    },
+    {
       "name": "gogames",
       "private": false,
       "lang": "JavaScript",
@@ -77,16 +87,6 @@
       "d7": 0,
       "ecrits": 200,
       "ecrits7d": 0,
-      "ecartes": 0
-    },
-    {
-      "name": "AegisEngine",
-      "private": false,
-      "lang": "Rust",
-      "all": 12975,
-      "d7": 12975,
-      "ecrits": 495,
-      "ecrits7d": 495,
       "ecartes": 0
     },
     {
@@ -144,7 +144,7 @@
       "private": true,
       "lang": "Rust",
       "all": 7389,
-      "d7": 369,
+      "d7": 0,
       "ecrits": 117,
       "ecrits7d": 0,
       "ecartes": 0
@@ -233,20 +233,20 @@
       "name": "web3game",
       "private": false,
       "lang": "HTML",
-      "all": 379,
-      "d7": 286,
-      "ecrits": 5199,
-      "ecrits7d": 62,
+      "all": 382,
+      "d7": 289,
+      "ecrits": 5202,
+      "ecrits7d": 65,
       "ecartes": 0
     },
     {
       "name": "web3game-notes",
       "private": true,
       "lang": "Shell",
-      "all": 59,
-      "d7": 59,
-      "ecrits": 17157,
-      "ecrits7d": 4166,
+      "all": 73,
+      "d7": 73,
+      "ecrits": 17797,
+      "ecrits7d": 4806,
       "ecartes": 0
     },
     {

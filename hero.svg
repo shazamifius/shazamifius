@@ -499,19 +499,19 @@
     <text x="532" y="2263.0" xml:space="preserve"></text>
     <text x="532" y="2293.7" xml:space="preserve">  ┌─[ investissement ]·· lignes de code écrites (ajouts seuls)</text>
     <text x="532" y="2324.4" xml:space="preserve">  │</text>
-    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 317 171 lignes</text>
-    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 81 157 lignes</text>
+    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 320 341 lignes</text>
+    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 82 791 lignes</text>
     <text x="532" y="2416.6" xml:space="preserve">  │</text>
     <text x="532" y="2447.3" xml:space="preserve">  │   projets publics</text>
-    <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~44k · VRchat-tracking ~19k · gogames ~12k</text>
-    <text x="532" y="2508.8" xml:space="preserve">  │     AegisEngine ~12k · ultra-sync ~11k · eegprev ~10k</text>
-    <text x="532" y="2539.5" xml:space="preserve">  │     simulateur ~5k</text>
-    <text x="532" y="2570.2" xml:space="preserve">  │   privé (17 repos) · 198 957 lignes</text>
-    <text x="532" y="2600.9" xml:space="preserve">  │   + 48 186 lignes de documentation, comptées à part</text>
+    <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~44k · VRchat-tracking ~19k</text>
+    <text x="532" y="2508.8" xml:space="preserve">  │     AegisEngine ~13k · gogames ~12k · ultra-sync ~11k</text>
+    <text x="532" y="2539.5" xml:space="preserve">  │     eegprev ~10k · simulateur ~5k</text>
+    <text x="532" y="2570.2" xml:space="preserve">  │   privé (17 repos) · 201 235 lignes</text>
+    <text x="532" y="2600.9" xml:space="preserve">  │   + 48 843 lignes de documentation, comptées à part</text>
     <text x="532" y="2631.6" xml:space="preserve">  │</text>
     <text x="532" y="2662.4" xml:space="preserve">  │   ( code source seul · objets 3D, données et généré exclus )</text>
     <text x="532" y="2693.1" xml:space="preserve">  │</text>
-    <text x="532" y="2723.8" xml:space="preserve">  │   au 2026-08-12 · recalculé tout seul, chaque jour (GitHub Action)</text>
+    <text x="532" y="2723.8" xml:space="preserve">  │   au 2026-08-13 · recalculé tout seul, chaque jour (GitHub Action)</text>
     <text x="532" y="2754.5" xml:space="preserve">  └───</text>
     <text x="532" y="2785.2" xml:space="preserve"></text>
     <text x="532" y="2816.0" xml:space="preserve"></text>
