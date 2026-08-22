@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-21",
-  "totalAll": 333381,
-  "total7d": 11368,
-  "publicAll": 125835,
-  "privateAll": 207546,
-  "public7d": 6729,
-  "private7d": 4639,
-  "ecritsAll": 51181,
-  "ecrits7d": 2331,
+  "generatedAt": "2026-08-22",
+  "totalAll": 335899,
+  "total7d": 12561,
+  "publicAll": 127007,
+  "privateAll": 208892,
+  "public7d": 7901,
+  "private7d": 4660,
+  "ecritsAll": 51220,
+  "ecrits7d": 2351,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -33,10 +33,10 @@
       "name": "web3game-core",
       "private": true,
       "lang": "Rust",
-      "all": 58018,
-      "d7": 1724,
+      "all": 59364,
+      "d7": 2158,
       "ecrits": 13871,
-      "ecrits7d": 199,
+      "ecrits7d": 180,
       "ecartes": 0
     },
     {
@@ -54,7 +54,7 @@
       "private": true,
       "lang": "Rust",
       "all": 37924,
-      "d7": 2878,
+      "d7": 2465,
       "ecrits": 51,
       "ecrits7d": 0,
       "ecartes": 0
@@ -63,8 +63,8 @@
       "name": "AegisEngine",
       "private": false,
       "lang": "Rust",
-      "all": 20593,
-      "d7": 6729,
+      "all": 21765,
+      "d7": 7901,
       "ecrits": 495,
       "ecrits7d": 0,
       "ecartes": 0
@@ -245,8 +245,8 @@
       "lang": "Shell",
       "all": 154,
       "d7": 37,
-      "ecrits": 19929,
-      "ecrits7d": 2132,
+      "ecrits": 19968,
+      "ecrits7d": 2171,
       "ecartes": 0
     },
     {
