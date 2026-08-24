@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-23",
-  "totalAll": 343954,
-  "total7d": 79480,
+  "generatedAt": "2026-08-24",
+  "totalAll": 350990,
+  "total7d": 84806,
   "publicAll": 128506,
-  "privateAll": 215448,
-  "public7d": 9400,
-  "private7d": 70080,
-  "ecritsAll": 64422,
-  "ecrits7d": 16012,
+  "privateAll": 222484,
+  "public7d": 9256,
+  "private7d": 75550,
+  "ecritsAll": 65353,
+  "ecrits7d": 16462,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -23,20 +23,20 @@
       "name": "site-atelier-enila-tityad",
       "private": true,
       "lang": "HTML",
-      "all": 62465,
-      "d7": 62465,
-      "ecrits": 463,
-      "ecrits7d": 463,
+      "all": 67727,
+      "d7": 67727,
+      "ecrits": 1029,
+      "ecrits7d": 1029,
       "ecartes": 0
     },
     {
       "name": "web3game-core",
       "private": true,
       "lang": "Rust",
-      "all": 61173,
-      "d7": 3780,
-      "ecrits": 15337,
-      "ecrits7d": 1646,
+      "all": 62329,
+      "d7": 4714,
+      "ecrits": 15379,
+      "ecrits7d": 1658,
       "ecartes": 0
     },
     {
@@ -53,8 +53,8 @@
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
-      "all": 40091,
-      "d7": 3660,
+      "all": 40709,
+      "d7": 2934,
       "ecrits": 51,
       "ecrits7d": 0,
       "ecartes": 0
@@ -64,7 +64,7 @@
       "private": false,
       "lang": "Rust",
       "all": 23264,
-      "d7": 9400,
+      "d7": 9256,
       "ecrits": 495,
       "ecrits7d": 0,
       "ecartes": 0
@@ -245,8 +245,8 @@
       "lang": "Shell",
       "all": 293,
       "d7": 175,
-      "ecrits": 29789,
-      "ecrits7d": 11976,
+      "ecrits": 30037,
+      "ecrits7d": 11773,
       "ecartes": 0
     },
     {
@@ -275,8 +275,8 @@
       "lang": null,
       "all": 0,
       "d7": 0,
-      "ecrits": 1927,
-      "ecrits7d": 1927,
+      "ecrits": 2002,
+      "ecrits7d": 2002,
       "ecartes": 0
     }
   ]
