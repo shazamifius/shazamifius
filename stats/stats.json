@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-28",
+  "generatedAt": "2026-08-29",
   "totalAll": 352150,
-  "total7d": 78793,
+  "total7d": 75928,
   "publicAll": 128506,
   "privateAll": 223644,
-  "public7d": 2671,
-  "private7d": 76122,
+  "public7d": 1246,
+  "private7d": 74682,
   "ecritsAll": 65815,
-  "ecrits7d": 15109,
+  "ecrits7d": 15070,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -34,7 +34,7 @@
       "private": true,
       "lang": "Rust",
       "all": 62363,
-      "d7": 4345,
+      "d7": 2999,
       "ecrits": 15379,
       "ecrits7d": 1508,
       "ecartes": 0
@@ -54,7 +54,7 @@
       "private": true,
       "lang": "Rust",
       "all": 41151,
-      "d7": 3227,
+      "d7": 3133,
       "ecrits": 51,
       "ecrits7d": 0,
       "ecartes": 0
@@ -64,7 +64,7 @@
       "private": false,
       "lang": "Rust",
       "all": 23264,
-      "d7": 2671,
+      "d7": 1246,
       "ecrits": 495,
       "ecrits7d": 0,
       "ecartes": 0
@@ -246,7 +246,7 @@
       "all": 293,
       "d7": 139,
       "ecrits": 30328,
-      "ecrits7d": 10399,
+      "ecrits7d": 10360,
       "ecartes": 0
     },
     {
