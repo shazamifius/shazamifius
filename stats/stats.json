@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-03",
-  "totalAll": 370741,
-  "total7d": 18591,
-  "publicAll": 146497,
-  "privateAll": 224244,
-  "public7d": 17991,
-  "private7d": 600,
-  "ecritsAll": 73830,
-  "ecrits7d": 8015,
+  "generatedAt": "2026-09-04",
+  "totalAll": 373026,
+  "total7d": 20876,
+  "publicAll": 148743,
+  "privateAll": 224283,
+  "public7d": 20237,
+  "private7d": 639,
+  "ecritsAll": 74493,
+  "ecrits7d": 8678,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -23,10 +23,10 @@
       "name": "site-atelier-enila-tityad",
       "private": true,
       "lang": "HTML",
-      "all": 68652,
-      "d7": 241,
-      "ecrits": 3533,
-      "ecrits7d": 2333,
+      "all": 68684,
+      "d7": 273,
+      "ecrits": 3913,
+      "ecrits7d": 2713,
       "ecartes": 0
     },
     {
@@ -35,8 +35,8 @@
       "lang": "Rust",
       "all": 62407,
       "d7": 44,
-      "ecrits": 15587,
-      "ecrits7d": 208,
+      "ecrits": 15635,
+      "ecrits7d": 256,
       "ecartes": 0
     },
     {
@@ -50,6 +50,16 @@
       "ecartes": 0
     },
     {
+      "name": "AegisEngine",
+      "private": false,
+      "lang": "Rust",
+      "all": 43501,
+      "d7": 20237,
+      "ecrits": 583,
+      "ecrits7d": 88,
+      "ecartes": 0
+    },
+    {
       "name": "web3game-launcher",
       "private": true,
       "lang": "Rust",
@@ -57,16 +67,6 @@
       "d7": 106,
       "ecrits": 51,
       "ecrits7d": 0,
-      "ecartes": 0
-    },
-    {
-      "name": "AegisEngine",
-      "private": false,
-      "lang": "Rust",
-      "all": 41255,
-      "d7": 17991,
-      "ecrits": 544,
-      "ecrits7d": 49,
       "ecartes": 0
     },
     {
@@ -233,10 +233,10 @@
       "name": "web3game-notes",
       "private": true,
       "lang": "Shell",
-      "all": 502,
-      "d7": 209,
-      "ecrits": 35410,
-      "ecrits7d": 5082,
+      "all": 509,
+      "d7": 216,
+      "ecrits": 35598,
+      "ecrits7d": 5270,
       "ecartes": 0
     },
     {
@@ -275,8 +275,8 @@
       "lang": null,
       "all": 0,
       "d7": 0,
-      "ecrits": 2345,
-      "ecrits7d": 343,
+      "ecrits": 2353,
+      "ecrits7d": 351,
       "ecartes": 0
     }
   ]
