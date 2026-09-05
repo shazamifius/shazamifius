@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-04",
-  "totalAll": 373026,
-  "total7d": 20876,
-  "publicAll": 148743,
-  "privateAll": 224283,
-  "public7d": 20237,
-  "private7d": 639,
-  "ecritsAll": 74493,
-  "ecrits7d": 8678,
+  "generatedAt": "2026-09-05",
+  "totalAll": 378492,
+  "total7d": 26342,
+  "publicAll": 154159,
+  "privateAll": 224333,
+  "public7d": 25653,
+  "private7d": 689,
+  "ecritsAll": 78513,
+  "ecrits7d": 12698,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -23,10 +23,10 @@
       "name": "site-atelier-enila-tityad",
       "private": true,
       "lang": "HTML",
-      "all": 68684,
-      "d7": 273,
-      "ecrits": 3913,
-      "ecrits7d": 2713,
+      "all": 68734,
+      "d7": 323,
+      "ecrits": 4357,
+      "ecrits7d": 3157,
       "ecartes": 0
     },
     {
@@ -40,6 +40,16 @@
       "ecartes": 0
     },
     {
+      "name": "AegisEngine",
+      "private": false,
+      "lang": "Rust",
+      "all": 48917,
+      "d7": 25653,
+      "ecrits": 3522,
+      "ecrits7d": 3027,
+      "ecartes": 0
+    },
+    {
       "name": "GlucoseGit",
       "private": false,
       "lang": "TypeScript",
@@ -47,16 +57,6 @@
       "d7": 0,
       "ecrits": 6113,
       "ecrits7d": 0,
-      "ecartes": 0
-    },
-    {
-      "name": "AegisEngine",
-      "private": false,
-      "lang": "Rust",
-      "all": 43501,
-      "d7": 20237,
-      "ecrits": 583,
-      "ecrits7d": 88,
       "ecartes": 0
     },
     {
@@ -235,8 +235,8 @@
       "lang": "Shell",
       "all": 509,
       "d7": 216,
-      "ecrits": 35598,
-      "ecrits7d": 5270,
+      "ecrits": 36201,
+      "ecrits7d": 5873,
       "ecartes": 0
     },
     {
@@ -275,8 +275,8 @@
       "lang": null,
       "all": 0,
       "d7": 0,
-      "ecrits": 2353,
-      "ecrits7d": 351,
+      "ecrits": 2387,
+      "ecrits7d": 385,
       "ecartes": 0
     }
   ]
