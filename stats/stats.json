@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-12",
-  "totalAll": 457938,
-  "total7d": 79442,
-  "publicAll": 233084,
+  "generatedAt": "2026-09-13",
+  "totalAll": 489649,
+  "total7d": 110998,
+  "publicAll": 264795,
   "privateAll": 224854,
-  "public7d": 78925,
-  "private7d": 517,
-  "ecritsAll": 96529,
-  "ecrits7d": 17958,
+  "public7d": 110636,
+  "private7d": 362,
+  "ecritsAll": 100054,
+  "ecrits7d": 20896,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -22,11 +22,11 @@
     {
       "name": "GlucoseGit",
       "private": false,
-      "lang": "TypeScript",
-      "all": 116576,
-      "d7": 71721,
-      "ecrits": 19460,
-      "ecrits7d": 13347,
+      "lang": "Rust",
+      "all": 148287,
+      "d7": 103432,
+      "ecrits": 22985,
+      "ecrits7d": 16872,
       "ecartes": 0
     },
     {
@@ -34,9 +34,9 @@
       "private": true,
       "lang": "HTML",
       "all": 69251,
-      "d7": 513,
+      "d7": 358,
       "ecrits": 5723,
-      "ecrits7d": 1308,
+      "ecrits7d": 792,
       "ecartes": 0
     },
     {
@@ -56,7 +56,7 @@
       "all": 56121,
       "d7": 7204,
       "ecrits": 3571,
-      "ecrits7d": 49,
+      "ecrits7d": 1,
       "ecartes": 0
     },
     {
@@ -236,7 +236,7 @@
       "all": 513,
       "d7": 4,
       "ecrits": 39084,
-      "ecrits7d": 2883,
+      "ecrits7d": 2860,
       "ecartes": 0
     },
     {
