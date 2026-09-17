@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-16",
-  "totalAll": 507412,
-  "total7d": 109650,
-  "publicAll": 282558,
+  "generatedAt": "2026-09-17",
+  "totalAll": 515703,
+  "total7d": 97027,
+  "publicAll": 290849,
   "privateAll": 224854,
-  "public7d": 109650,
+  "public7d": 97027,
   "private7d": 0,
-  "ecritsAll": 100976,
-  "ecrits7d": 17613,
+  "ecritsAll": 101581,
+  "ecrits7d": 13633,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -23,10 +23,10 @@
       "name": "GlucoseGit",
       "private": false,
       "lang": "Rust",
-      "all": 166050,
-      "d7": 109153,
-      "ecrits": 23907,
-      "ecrits7d": 17257,
+      "all": 174341,
+      "d7": 97027,
+      "ecrits": 24512,
+      "ecrits7d": 13633,
       "ecartes": 0
     },
     {
@@ -54,7 +54,7 @@
       "private": false,
       "lang": "Rust",
       "all": 56121,
-      "d7": 497,
+      "d7": 0,
       "ecrits": 3571,
       "ecrits7d": 0,
       "ecartes": 0
@@ -156,7 +156,7 @@
       "all": 5764,
       "d7": 0,
       "ecrits": 1589,
-      "ecrits7d": 97,
+      "ecrits7d": 0,
       "ecartes": 0
     },
     {
@@ -236,7 +236,7 @@
       "all": 513,
       "d7": 0,
       "ecrits": 39084,
-      "ecrits7d": 259,
+      "ecrits7d": 0,
       "ecartes": 0
     },
     {
