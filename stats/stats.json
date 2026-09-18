@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-17",
-  "totalAll": 515703,
-  "total7d": 97027,
-  "publicAll": 290849,
+  "generatedAt": "2026-09-18",
+  "totalAll": 518343,
+  "total7d": 90285,
+  "publicAll": 293489,
   "privateAll": 224854,
-  "public7d": 97027,
+  "public7d": 90285,
   "private7d": 0,
   "ecritsAll": 101581,
-  "ecrits7d": 13633,
+  "ecrits7d": 11063,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -23,10 +23,10 @@
       "name": "GlucoseGit",
       "private": false,
       "lang": "Rust",
-      "all": 174341,
-      "d7": 97027,
+      "all": 176981,
+      "d7": 90285,
       "ecrits": 24512,
-      "ecrits7d": 13633,
+      "ecrits7d": 11063,
       "ecartes": 0
     },
     {
