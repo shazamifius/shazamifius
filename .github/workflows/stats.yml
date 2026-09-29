@@ -32,12 +32,14 @@ jobs:
       - name: Réinjecte les chiffres frais dans hero.svg
         run: node stats/build.mjs
 
-      - name: Commit et push direct
+      - name: Commit et push garanti
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
           git add hero.svg stats/stats.json
-           if ! git diff --staged --quiet; then
-             git commit -m "chore(stats): mise à jour automatique"
-            git push --force origin HEAD:main
-            fi
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(stats): mise à jour automatique"
+            git pull --rebase -X theirs origin main
+            git push origin HEAD:main
+          fi
