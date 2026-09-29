@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -35,5 +37,4 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add hero.svg stats/stats.json
-          git diff --staged --quiet || git commit -m "chore(stats): mise à jour automatique"
-          git push
+          git diff --staged --quiet || (git commit -m "chore(stats): mise à jour automatique" && git pull --rebase origin main && git push origin main)
