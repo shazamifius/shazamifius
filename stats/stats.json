@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-02",
-  "totalAll": 739654,
-  "total7d": 153411,
+  "generatedAt": "2026-10-03",
+  "totalAll": 746763,
+  "total7d": 145313,
   "publicAll": 395850,
-  "privateAll": 343804,
-  "public7d": 34461,
-  "private7d": 118950,
+  "privateAll": 350913,
+  "public7d": 19254,
+  "private7d": 126059,
   "ecritsAll": 121779,
-  "ecrits7d": 12878,
+  "ecrits7d": 11511,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -24,9 +24,9 @@
       "private": false,
       "lang": "Rust",
       "all": 279342,
-      "d7": 34461,
+      "d7": 19254,
       "ecrits": 36767,
-      "ecrits7d": 4935,
+      "ecrits7d": 3568,
       "ecartes": 0
     },
     {
@@ -63,8 +63,8 @@
       "name": "PROTEO",
       "private": true,
       "lang": "Rust",
-      "all": 45421,
-      "d7": 45421,
+      "all": 52530,
+      "d7": 52530,
       "ecrits": 7001,
       "ecrits7d": 7001,
       "ecartes": 0
