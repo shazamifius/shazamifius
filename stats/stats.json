@@ -6,8 +6,8 @@
   "privateAll": 351800,
   "public7d": 36680,
   "private7d": 67,
-  "ecritsAll": 128785,
-  "ecrits7d": 4185,
+  "ecritsAll": 128933,
+  "ecrits7d": 4333,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -25,8 +25,8 @@
       "lang": "Rust",
       "all": 332344,
       "d7": 36680,
-      "ecrits": 43731,
-      "ecrits7d": 4143,
+      "ecrits": 43879,
+      "ecrits7d": 4291,
       "ecartes": 0
     },
     {
