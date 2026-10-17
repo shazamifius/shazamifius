@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-16",
+  "generatedAt": "2026-10-17",
   "totalAll": 813862,
-  "total7d": 43756,
+  "total7d": 41304,
   "publicAll": 461609,
   "privateAll": 352253,
-  "public7d": 43236,
+  "public7d": 40784,
   "private7d": 520,
   "ecritsAll": 131301,
-  "ecrits7d": 5921,
+  "ecrits7d": 5380,
   "ecartesAll": 0,
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -24,9 +24,9 @@
       "private": false,
       "lang": "Rust",
       "all": 345101,
-      "d7": 43236,
+      "d7": 40784,
       "ecrits": 45588,
-      "ecrits7d": 5220,
+      "ecrits7d": 4679,
       "ecartes": 0
     },
     {
