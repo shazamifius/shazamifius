@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-10-18",
-  "totalAll": 818788,
-  "total7d": 44367,
-  "publicAll": 466535,
-  "privateAll": 352253,
-  "public7d": 43847,
+  "generatedAt": "2026-10-19",
+  "totalAll": 684681,
+  "total7d": 47663,
+  "publicAll": 473258,
+  "privateAll": 211423,
+  "public7d": 47143,
   "private7d": 520,
-  "ecritsAll": 132062,
-  "ecrits7d": 5822,
+  "ecritsAll": 132275,
+  "ecrits7d": 6040,
   "ecartesAll": 0,
+  "declaresAll": 141171,
+  "glucoseVersion": "v2.0.3-beta.5",
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
     "comptage": "ajouts seuls — une ligne supprimée n'a pas été écrite",
@@ -16,6 +18,7 @@
     "plafondParFichier": 50000,
     "botsExclus": true,
     "ecritsComptesAPart": true,
+    "declaresParLeDepot": "linguist-vendored + linguist-generated (.gitattributes) ne sont jamais comptés",
     "note": "assets 3D, images, données, journaux, dépendances embarquées et fichiers générés ne sont jamais comptés"
   },
   "repos": [
@@ -24,40 +27,33 @@
       "private": false,
       "lang": "Rust",
       "all": 350027,
-      "d7": 43847,
-      "ecrits": 46349,
-      "ecrits7d": 5121,
-      "ecartes": 0
-    },
-    {
-      "name": "site-atelier-enila-tityad",
-      "private": true,
-      "lang": "HTML",
-      "all": 142847,
-      "d7": 67,
-      "ecrits": 6707,
-      "ecrits7d": 42,
-      "ecartes": 0
+      "d7": 40442,
+      "ecrits": 46522,
+      "ecrits7d": 5239,
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "web3game-core",
       "private": true,
       "lang": "Rust",
-      "all": 62407,
+      "all": 62483,
       "d7": 0,
       "ecrits": 15639,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "AegisEngine",
       "private": false,
       "lang": "Rust",
-      "all": 56121,
+      "all": 56143,
       "d7": 0,
       "ecrits": 3571,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "PROTEO",
@@ -65,9 +61,10 @@
       "lang": "Rust",
       "all": 53803,
       "d7": 453,
-      "ecrits": 7660,
+      "ecrits": 7813,
       "ecrits7d": 659,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "web3game-launcher",
@@ -77,7 +74,8 @@
       "d7": 0,
       "ecrits": 51,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "VRchatFACE-HAND-ARM-tracking",
@@ -87,7 +85,8 @@
       "d7": 0,
       "ecrits": 1396,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "gogames",
@@ -97,17 +96,8 @@
       "d7": 0,
       "ecrits": 200,
       "ecrits7d": 0,
-      "ecartes": 0
-    },
-    {
-      "name": "cerveau-image-hlsl",
-      "private": true,
-      "lang": "C++",
-      "all": 11676,
-      "d7": 0,
-      "ecrits": 0,
-      "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "genshinlearn",
@@ -117,7 +107,8 @@
       "d7": 0,
       "ecrits": 611,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "ultra-sync",
@@ -127,7 +118,8 @@
       "d7": 0,
       "ecrits": 790,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "eegprev",
@@ -137,7 +129,19 @@
       "d7": 0,
       "ecrits": 63,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
+    },
+    {
+      "name": "site-atelier-enila-tityad",
+      "private": true,
+      "lang": "HTML",
+      "all": 9929,
+      "d7": 67,
+      "ecrits": 6443,
+      "ecrits7d": 42,
+      "ecartes": 0,
+      "declares": 133183
     },
     {
       "name": "spike01-unreal",
@@ -147,7 +151,8 @@
       "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "glucose-notes",
@@ -157,7 +162,19 @@
       "d7": 0,
       "ecrits": 117,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
+    },
+    {
+      "name": "minigym",
+      "private": false,
+      "lang": "JavaScript",
+      "all": 6701,
+      "d7": 6701,
+      "ecrits": 100,
+      "ecrits7d": 100,
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "Simulateur-d-emergence-D-eterministe",
@@ -167,7 +184,8 @@
       "d7": 0,
       "ecrits": 1589,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "ai-shader-forge",
@@ -177,7 +195,19 @@
       "d7": 0,
       "ecrits": 367,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
+    },
+    {
+      "name": "cerveau-image-hlsl",
+      "private": true,
+      "lang": "C++",
+      "all": 3688,
+      "d7": 0,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0,
+      "declares": 7988
     },
     {
       "name": "hub01-unreal",
@@ -187,7 +217,8 @@
       "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "agent-atelier",
@@ -197,7 +228,8 @@
       "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "mechaguardian",
@@ -207,7 +239,8 @@
       "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "svg-lab",
@@ -217,7 +250,8 @@
       "d7": 0,
       "ecrits": 7,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "projet-brutforce-hlsl",
@@ -227,7 +261,8 @@
       "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "discord-scroller",
@@ -237,7 +272,8 @@
       "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "web3game-notes",
@@ -245,9 +281,10 @@
       "lang": "Shell",
       "all": 513,
       "d7": 0,
-      "ecrits": 39084,
+      "ecrits": 39135,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "web3game",
@@ -257,7 +294,8 @@
       "d7": 0,
       "ecrits": 5202,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "glucose-brain",
@@ -267,7 +305,8 @@
       "d7": 0,
       "ecrits": 0,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "web3game-logs",
@@ -277,7 +316,8 @@
       "d7": 0,
       "ecrits": 2,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     },
     {
       "name": "web3game-memoire",
@@ -287,7 +327,8 @@
       "d7": 0,
       "ecrits": 2657,
       "ecrits7d": 0,
-      "ecartes": 0
+      "ecartes": 0,
+      "declares": 0
     }
   ]
 }

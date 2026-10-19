@@ -471,16 +471,16 @@
     <text x="532" y="1402.8" xml:space="preserve"></text>
     <text x="532" y="1433.6" xml:space="preserve">shazamifius@github ~ $ cat glucose.md</text>
     <text x="532" y="1464.3" xml:space="preserve"></text>
-    <text x="532" y="1495.0" xml:space="preserve">  ┌─[ Glucose ]·· TypeScript · Rust · CRDT</text>
+    <text x="532" y="1495.0" xml:space="preserve">  ┌─[ Glucose ]·· Rust natif · sans navigateur</text>
     <text x="532" y="1525.7" xml:space="preserve">  │</text>
     <text x="532" y="1556.4" xml:space="preserve">  │   Un canvas infini pour poser ses idées à plat, et les relier.</text>
     <text x="532" y="1587.2" xml:space="preserve">  │   « Pose. Relie. Zoome. Explore. » — rien d'autre.</text>
     <text x="532" y="1617.9" xml:space="preserve">  │</text>
     <text x="532" y="1648.6" xml:space="preserve">  │   ce qui marche déjà</text>
     <text x="532" y="1679.3" xml:space="preserve">  │     ├─ toile infinie, notes reliées par flèches typées (du sens)</text>
-    <text x="532" y="1710.0" xml:space="preserve">  │     ├─ 100% local · doc Automerge (CRDT) qu'on ne peut pas casser</text>
+    <text x="532" y="1710.0" xml:space="preserve">  │     ├─ enregistré à chaque geste · une Time Machine, geste par geste</text>
     <text x="532" y="1740.8" xml:space="preserve">  │     ├─ un serveur MCP fait main : l'IA lit la STRUCTURE, pas l'écran</text>
-    <text x="532" y="1771.5" xml:space="preserve">  │     └─ une géométrie déterministe (même entrée = même sortie)</text>
+    <text x="532" y="1771.5" xml:space="preserve">  │     └─ un noyau sans dépendance : 10 millions de nœuds en 141 ms</text>
     <text x="532" y="1802.2" xml:space="preserve">  │</text>
     <text x="532" y="1832.9" xml:space="preserve">  │   ce que je cherche encore</text>
     <text x="532" y="1863.6" xml:space="preserve">  │     ├─ pas « mieux » qu'une feuille de papier —</text>
@@ -490,7 +490,7 @@
     <text x="532" y="1986.5" xml:space="preserve">  │   l'idée, au fond</text>
     <text x="532" y="2017.2" xml:space="preserve">  │     └─ un langage 2D entre l'espace latent de l'IA et l'œil</text>
     <text x="532" y="2048.0" xml:space="preserve">  │</text>
-    <text x="532" y="2078.7" xml:space="preserve">  │   v1.0.1-beta.24 · MIT · bêta, encore en chantier</text>
+    <text x="532" y="2078.7" xml:space="preserve">  │   v2.0.3-beta.5 · MIT · bêta, encore en chantier</text>
     <text x="532" y="2109.4" xml:space="preserve">  │   → github.com/shazamifius/GlucoseGit</text>
     <text x="532" y="2140.1" xml:space="preserve">  └───</text>
     <text x="532" y="2170.8" xml:space="preserve"></text>
@@ -499,19 +499,19 @@
     <text x="532" y="2263.0" xml:space="preserve"></text>
     <text x="532" y="2293.7" xml:space="preserve">  ┌─[ investissement ]·· lignes de code écrites (ajouts seuls)</text>
     <text x="532" y="2324.4" xml:space="preserve">  │</text>
-    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 818 788 lignes</text>
-    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 44 367 lignes</text>
+    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 684 681 lignes</text>
+    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 47 663 lignes</text>
     <text x="532" y="2416.6" xml:space="preserve">  │</text>
     <text x="532" y="2447.3" xml:space="preserve">  │   projets publics</text>
     <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~350k · AegisEngine ~56k</text>
     <text x="532" y="2508.8" xml:space="preserve">  │     VRchat-tracking ~19k · gogames ~12k</text>
-    <text x="532" y="2539.5" xml:space="preserve">  │     ultra-sync ~11k · eegprev ~10k · simulateur ~5k</text>
-    <text x="532" y="2570.2" xml:space="preserve">  │   privé (19 repos) · 352 253 lignes</text>
-    <text x="532" y="2600.9" xml:space="preserve">  │   + 132 062 lignes de documentation, comptées à part</text>
+    <text x="532" y="2539.5" xml:space="preserve">  │     ultra-sync ~11k · eegprev ~10k · +2 autres</text>
+    <text x="532" y="2570.2" xml:space="preserve">  │   privé (19 repos) · 211 423 lignes</text>
+    <text x="532" y="2600.9" xml:space="preserve">  │   + 132 275 lignes de documentation, comptées à part</text>
     <text x="532" y="2631.6" xml:space="preserve">  │</text>
     <text x="532" y="2662.4" xml:space="preserve">  │   ( code source seul · objets 3D, données et généré exclus )</text>
     <text x="532" y="2693.1" xml:space="preserve">  │</text>
-    <text x="532" y="2723.8" xml:space="preserve">  │   au 2026-10-18 · recalculé tout seul, chaque jour (GitHub Action)</text>
+    <text x="532" y="2723.8" xml:space="preserve">  │   au 2026-10-19 · recalculé tout seul, chaque jour (GitHub Action)</text>
     <text x="532" y="2754.5" xml:space="preserve">  └───</text>
     <text x="532" y="2785.2" xml:space="preserve"></text>
     <text x="532" y="2816.0" xml:space="preserve"></text>
