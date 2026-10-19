@@ -61,7 +61,8 @@
 //   6. RIEN DEUX FOIS — une version de fichier ou une ligne déjà comptée ne se recompte pas.
 //
 //  ── ET DEUX SÉPARATIONS HONNÊTES ───────────────────────────────────────────────────────
-//   · les BOTS ne comptent pas (dependabot, github-actions…) : ce n'est pas moi qui écris ;
+//   · les ROBOTS D'ENTRETIEN ne comptent pas (dependabot, github-actions…) : ils ne
+//     travaillent pas pour moi. Les AGENTS qui écrivent le projet à ma demande, eux, comptent ;
 //   · les ÉCRITS (documentation) sont comptés À PART. C'est du vrai travail, mais ce n'est
 //     pas du code, et les additionner rendrait le nombre moins vrai.
 //
@@ -154,9 +155,19 @@ const ATTRIBUTS_PAS_DE_MOI = ['linguist-vendored', 'linguist-generated'];
 // où la liste blanche a tort.
 const PLAFOND_PAR_FICHIER = 50_000;
 
-// Les auteurs qui ne sont pas moi.
-const EST_UN_BOT = (auteur) =>
-  /\[bot\]/i.test(auteur) || /^(dependabot|github-actions|renovate)\b/i.test(auteur);
+// Les auteurs qui ne travaillent pas pour moi.
+//
+// Les AGENTS qui écrivent le projet à ma demande — Claude, Jules, Copilot, Devin… — comptent :
+// décision du 19 octobre 2026. Jusque-là, le code écrit avec Claude était signé de mon nom et
+// comptait, et celui de Jules, signé `google-labs-jules[bot]`, ne comptait pas (~17 700 lignes) :
+// même travail, frontière tracée par une signature. La vraie frontière sépare ceux qui
+// travaillent SUR le projet de ceux qui l'ENTRETIENNENT (dependabot, renovate, github-actions),
+// et ceux-là ne comptent pas.
+// Un `[bot]` inconnu reste exclu tant qu'on ne l'a pas rangé ici — et le journal du job le nomme,
+// dépôt par dépôt, pour que l'oubli se voie.
+const AGENTS = /^(google-labs-jules|copilot-swe-agent|copilot|claude|devin-ai-integration|cursor-agent|codex|openhands-agent)(\[bot\])?$/i;
+const EST_UN_BOT = (auteur) => !AGENTS.test(auteur) &&
+  (/\[bot\]/i.test(auteur) || /^(dependabot|github-actions|renovate)\b/i.test(auteur));
 
 const SEPT_JOURS = 7 * 24 * 3600;
 const CHRONO = 15 * 60 * 1000; // aucun git ne doit tenir le job en otage (plafond 6 h chez GitHub)
@@ -365,7 +376,7 @@ async function parcourir(dossier, maintenant) {
     else { ecrits += neuves; if (f.recent) ecrits7d += neuves; }
   };
 
-  const empreintes = new Set();
+  const empreintes = new Set(), robotsExclus = new Set();
   let ignorer = true;      // tant qu'on n'a pas vu d'en-tête, on ne compte rien
   let recent = false, enTete = false, avant = null, fichier = null;
   const clore = () => { if (fichier?.chemin) decider(fichier); fichier = null; };
@@ -375,7 +386,9 @@ async function parcourir(dossier, maintenant) {
       clore();
       const [auteur = '', horodatage, sujet] = brute.slice(1).split('\x1f');
       const empreinte = `${auteur}\x1f${horodatage}\x1f${sujet}`;
-      ignorer = EST_UN_BOT(auteur) || empreintes.has(empreinte);
+      const robot = EST_UN_BOT(auteur);
+      if (robot) robotsExclus.add(auteur);
+      ignorer = robot || empreintes.has(empreinte);
       empreintes.add(empreinte);
       const t = parseInt(horodatage, 10);
       recent = Number.isFinite(t) && (maintenant - t) <= SEPT_JOURS;
@@ -432,7 +445,7 @@ async function parcourir(dossier, maintenant) {
   const { code: sortie, signal } = await fin;
   if (sortie !== 0) throw new Error(`git log a échoué sur ${dossier} (${signal || sortie}) : ${erreur.trim()}`);
 
-  return { code, ecrits, code7d, ecrits7d, ecartes, declares, deplacees, recopiees };
+  return { code, ecrits, code7d, ecrits7d, ecartes, declares, deplacees, recopiees, robotsExclus: [...robotsExclus] };
 }
 
 // Le second chiffre : ce qui est ENCORE LÀ, aujourd'hui, sur la branche principale. Il ne
@@ -500,7 +513,8 @@ function presentes(dossier) {
         `${m.deplacees ? `  (déplacées : ${m.deplacees})` : ''}` +
         `${m.recopiees ? `  (déjà comptées : ${m.recopiees})` : ''}` +
         `${m.ecartes ? `  (écartés : ${m.ecartes} lignes générées)` : ''}` +
-        `${m.declares ? `  (déclarés pas de moi : ${m.declares})` : ''}`);
+        `${m.declares ? `  (déclarés pas de moi : ${m.declares})` : ''}` +
+        `${m.robotsExclus.length ? `  (robots exclus : ${m.robotsExclus.join(', ')})` : ''}`);
     }
 
     const somme = (k, f = () => true) => lignes.filter(f).reduce((s, x) => s + (x[k] || 0), 0);
@@ -523,7 +537,7 @@ function presentes(dossier) {
         present: 'lignes de code encore présentes sur la branche principale, mêmes règles',
         fenetre: 'date d\'AUTEUR, insensible aux rebases',
         plafondParFichier: PLAFOND_PAR_FICHIER,
-        botsExclus: true,
+        robots: 'robots d\'entretien exclus (dependabot, renovate, github-actions…) ; agents IA travaillant à ma demande comptés (Claude, Jules, Copilot, Devin…)',
         ecritsComptesAPart: true,
         declaresParLeDepot: ATTRIBUTS_PAS_DE_MOI.join(' + ') + ' (.gitattributes) ne sont jamais comptés',
         note: 'assets 3D, images, données, journaux, dépendances embarquées et fichiers générés ne sont jamais comptés',
