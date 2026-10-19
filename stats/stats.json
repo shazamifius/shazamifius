@@ -1,18 +1,18 @@
 {
   "generatedAt": "2026-10-19",
-  "totalAll": 646434,
-  "total7d": 43635,
+  "totalAll": 674721,
+  "total7d": 64577,
   "publicAll": 439198,
-  "privateAll": 207236,
-  "public7d": 43126,
-  "private7d": 509,
-  "ecritsAll": 118041,
-  "ecrits7d": 5973,
-  "presentAll": 484391,
+  "privateAll": 235523,
+  "public7d": 41747,
+  "private7d": 22830,
+  "ecritsAll": 119313,
+  "ecrits7d": 6734,
+  "presentAll": 511407,
   "ecartesAll": 0,
-  "declaresAll": 393106,
-  "deplaceesAll": 32801,
-  "recopieesAll": 78856,
+  "declaresAll": 937854,
+  "deplaceesAll": 33355,
+  "recopieesAll": 107117,
   "glucoseVersion": "v2.0.3-beta.5",
   "methode": {
     "regle": "liste blanche — seules les extensions de code listées sont comptées",
@@ -33,10 +33,10 @@
       "private": false,
       "lang": "Rust",
       "all": 313360,
-      "d7": 37644,
+      "d7": 36265,
       "present": 223109,
       "ecrits": 39261,
-      "ecrits7d": 5172,
+      "ecrits7d": 4929,
       "ecartes": 0,
       "declares": 0,
       "deplacees": 15739,
@@ -57,6 +57,20 @@
       "recopiees": 938
     },
     {
+      "name": "PROTEO",
+      "private": true,
+      "lang": "Rust",
+      "all": 59206,
+      "d7": 5184,
+      "present": 40545,
+      "ecrits": 7887,
+      "ecrits7d": 882,
+      "ecartes": 0,
+      "declares": 0,
+      "deplacees": 1224,
+      "recopiees": 26446
+    },
+    {
       "name": "AegisEngine",
       "private": false,
       "lang": "Rust",
@@ -69,20 +83,6 @@
       "declares": 0,
       "deplacees": 2121,
       "recopiees": 402
-    },
-    {
-      "name": "PROTEO",
-      "private": true,
-      "lang": "Rust",
-      "all": 52441,
-      "d7": 442,
-      "present": 36258,
-      "ecrits": 7664,
-      "ecrits7d": 659,
-      "ecartes": 0,
-      "declares": 0,
-      "deplacees": 685,
-      "recopiees": 826
     },
     {
       "name": "web3game-launcher",
@@ -173,10 +173,10 @@
       "private": true,
       "lang": "HTML",
       "all": 9724,
-      "d7": 67,
+      "d7": 0,
       "present": 8423,
       "ecrits": 6426,
-      "ecrits7d": 42,
+      "ecrits7d": 14,
       "ecartes": 0,
       "declares": 133183,
       "deplacees": 144,
@@ -195,6 +195,20 @@
       "declares": 0,
       "deplacees": 57,
       "recopiees": 17
+    },
+    {
+      "name": "bot-discord",
+      "private": true,
+      "lang": "C++",
+      "all": 7519,
+      "d7": 7519,
+      "present": 8353,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0,
+      "declares": 453738,
+      "deplacees": 0,
+      "recopiees": 834
     },
     {
       "name": "glucose-notes",
@@ -239,6 +253,20 @@
       "recopiees": 751
     },
     {
+      "name": "serveur-purpur",
+      "private": true,
+      "lang": "mcfunction",
+      "all": 4967,
+      "d7": 4967,
+      "present": 4967,
+      "ecrits": 809,
+      "ecrits7d": 809,
+      "ecartes": 0,
+      "declares": 9167,
+      "deplacees": 0,
+      "recopiees": 246
+    },
+    {
       "name": "ai-shader-forge",
       "private": true,
       "lang": "Rust",
@@ -251,6 +279,20 @@
       "declares": 0,
       "deplacees": 0,
       "recopiees": 25
+    },
+    {
+      "name": "blenderaddonexport",
+      "private": true,
+      "lang": "Python",
+      "all": 3924,
+      "d7": 48,
+      "present": 3902,
+      "ecrits": 240,
+      "ecrits7d": 0,
+      "ecartes": 0,
+      "declares": 0,
+      "deplacees": 15,
+      "recopiees": 6
     },
     {
       "name": "cerveau-image-hlsl",
@@ -281,6 +323,20 @@
       "recopiees": 0
     },
     {
+      "name": "auto-sorter",
+      "private": true,
+      "lang": "Python",
+      "all": 2176,
+      "d7": 2176,
+      "present": 2176,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0,
+      "declares": 0,
+      "deplacees": 0,
+      "recopiees": 0
+    },
+    {
       "name": "agent-atelier",
       "private": true,
       "lang": "Python",
@@ -293,6 +349,20 @@
       "declares": 0,
       "deplacees": 0,
       "recopiees": 0
+    },
+    {
+      "name": "projet-luma",
+      "private": true,
+      "lang": "C++",
+      "all": 1754,
+      "d7": 1754,
+      "present": 2149,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0,
+      "declares": 81843,
+      "deplacees": 0,
+      "recopiees": 395
     },
     {
       "name": "glucose-brain",
@@ -315,6 +385,20 @@
       "all": 1365,
       "d7": 0,
       "present": 1356,
+      "ecrits": 0,
+      "ecrits7d": 0,
+      "ecartes": 0,
+      "declares": 0,
+      "deplacees": 0,
+      "recopiees": 0
+    },
+    {
+      "name": "game-py",
+      "private": true,
+      "lang": "Python",
+      "all": 1182,
+      "d7": 1182,
+      "present": 1182,
       "ecrits": 0,
       "ecrits7d": 0,
       "ecartes": 0,
@@ -376,7 +460,7 @@
       "ecartes": 0,
       "declares": 0,
       "deplacees": 1781,
-      "recopiees": 4984
+      "recopiees": 6144
     },
     {
       "name": "web3game",

@@ -474,7 +474,11 @@ function presentes(dossier) {
 }
 
 (async () => {
-  const depots = (await listerDepots()).filter(r => !r.fork && r.name !== OWNER && r.size > 0);
+  // Pas de filtre sur `r.size` : GitHub met des HEURES à calculer la taille d'un dépôt neuf. Le
+  // 19 octobre 2026, six dépôts poussés le jour même (dont un de 18 821 fichiers) s'annonçaient
+  // à 0 Ko, et le compteur les sautait en silence. Qu'un dépôt soit vide, on le demande à git,
+  // après le clone.
+  const depots = (await listerDepots()).filter(r => !r.fork && r.name !== OWNER);
   // Toutes les questions à l'API AVANT les clones. Posée après dix minutes de `git clone`, la
   // même requête réutilisait une connexion que GitHub avait fermée entre-temps (« other side
   // closed », vu le 19 octobre 2026) : un échec sans rapport avec la question.
@@ -497,6 +501,12 @@ function presentes(dossier) {
         execFileSync('git', ['clone', '--quiet', '--bare', url, dossier],
           { stdio: 'ignore', timeout: CHRONO });
       } catch { throw new Error(`clone échoué : ${r.full_name} — rien n'est publié aujourd'hui`); }
+
+      // Vraiment vide : aucune branche, donc aucun commit.
+      if (!execFileSync('git', ['-C', dossier, 'for-each-ref', '--count=1', 'refs/heads'], { encoding: 'utf8' }).trim()) {
+        console.error(`${r.name.padEnd(38)} (dépôt vide)`);
+        continue;
+      }
 
       const m = await parcourir(dossier, maintenant);
       const present = presentes(dossier);
