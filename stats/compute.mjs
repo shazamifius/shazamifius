@@ -46,6 +46,7 @@
 //  ── LES QUATRE FILETS ──────────────────────────────────────────────────────────────────
 //   1. LISTE BLANCHE d'extensions — seul du code source connu est compté.
 //   2. DOSSIERS de dépendances et de génération — écartés quelle que soit l'extension.
+//      2 bis. Et tout ce que le dépôt marque lui-même `linguist-vendored` / `linguist-generated`.
 //   3. PLAFOND par fichier et par commit — au-delà de 50 000 lignes remuées d'un coup, c'est
 //      une machine qui a écrit. Ce filet ne regarde aucune extension : c'est lui qui reste
 //      debout quand les deux premiers ont tort.
@@ -121,6 +122,22 @@ const DOSSIERS_EXCLUS = [
   '**/*.generated.*', '**/*.gen.*', '**/*.pb.go', '**/*_pb2.py',
 ];
 
+// ── FILET 2 bis — ce que le dépôt lui-même déclare « pas de moi » ────────────────────────
+// Né le 19 octobre 2026. `site-atelier-enila-tityad` affichait 142 847 lignes, dont ~131 000
+// venaient de DEUX copies de l'ancien site : l'aspiration du site en ligne (`site-original/`)
+// et la sauvegarde du serveur (`sauvegarde-serveur-…/`), toutes deux fabriquées par le
+// logiciel WebAcappella. Du vrai `.html`, du vrai `.css`, en fichiers de quelques centaines de
+// lignes : la liste blanche ne pouvait rien, le plafond non plus, et aucun nom de dossier
+// générique ne les désignait. 16 % du total publié, en silence.
+//
+// Ajouter ces deux noms au filet 2 aurait été une règle par accident, qui n'attrape que le
+// passé. On lit plutôt la convention que GitHub applique déjà à sa propre barre de langages :
+// les attributs `linguist-vendored` et `linguist-generated` du `.gitattributes` de chaque
+// dépôt. C'est le dépôt qui dit ce qui n'est pas de moi, à un seul endroit, et GitHub en tient
+// compte aussi. Ce filet ne connaît que ce qu'on a marqué : il complète le filet 2, il ne le
+// remplace pas.
+const ATTRIBUTS_PAS_DE_MOI = ['linguist-vendored', 'linguist-generated'];
+
 // ── FILET 3 — le plafond ────────────────────────────────────────────────────────────────
 // Aucun être humain ne remue cinquante mille lignes dans UN fichier en UN commit. Ce filet
 // se juge sur ajouts + suppressions (le « remuement »), et non sur les seuls ajouts : c'est
@@ -141,6 +158,15 @@ const extension = (chemin) => {
   return point <= 0 ? '' : base.slice(point).toLowerCase();
 };
 
+// Un renommage s'écrit `src/{ancien.rs => nouveau.rs}` ou `ancien.rs => nouveau.rs` dans
+// `--numstat`. Sans ce dépliage, l'extension lue était `.rs}` : les lignes modifiées pendant un
+// renommage tombaient hors de la liste blanche, sans bruit. On garde le chemin d'ARRIVÉE.
+const cheminFinal = (c) => c
+  .replace(/\{[^{}]* => ([^{}]*)\}/g, '$1')
+  .replace(/^.* => /, '')
+  .replace(/\/{2,}/g, '/')
+  .replace(/^\//, '');
+
 const pathspec = [
   '--',
   ...CODE.map(e => `:(glob)**/*${e}`),
@@ -148,12 +174,13 @@ const pathspec = [
   ...DOSSIERS_EXCLUS.map(e => `:(exclude,glob)${e}`),
 ];
 
+const API = { headers: { Authorization: `Bearer ${TOKEN}`, 'User-Agent': 'stats-bot', Accept: 'application/vnd.github+json' } };
+
 async function listerDepots() {
   let page = 1, tous = [];
   for (;;) {
     const r = await fetch(
-      `https://api.github.com/user/repos?affiliation=owner&per_page=100&page=${page}`,
-      { headers: { Authorization: `Bearer ${TOKEN}`, 'User-Agent': 'stats-bot', Accept: 'application/vnd.github+json' } });
+      `https://api.github.com/user/repos?affiliation=owner&per_page=100&page=${page}`, API);
     if (!r.ok) throw new Error(`API ${r.status} : ${await r.text()}`);
     const a = await r.json();
     tous = tous.concat(a);
@@ -161,6 +188,33 @@ async function listerDepots() {
     page++;
   }
   return tous;
+}
+
+// La version de Glucose affichée sur la page. Elle était écrite à la main dans le gabarit, et
+// elle est restée à `v1.0.1-beta.24` pendant que Glucose 2 sortait : ce qu'on ne recalcule pas
+// se périme. On la lit donc à la source, comme le reste.
+async function derniereVersion(depot) {
+  const r = await fetch(`https://api.github.com/repos/${OWNER}/${depot}/releases?per_page=10`, API);
+  if (!r.ok) throw new Error(`API ${r.status} (releases de ${depot}) : ${await r.text()}`);
+  const publiee = (await r.json()).find(v => !v.draft);
+  if (!publiee) throw new Error(`aucune release publiée sur ${depot}`);
+  return publiee.tag_name;
+}
+
+// Les chemins que le dépôt marque lui-même comme n'étant pas de moi (filet 2 bis). Les
+// attributs se lisent dans le `.gitattributes` d'aujourd'hui (`--source=HEAD`) et s'appliquent
+// à tout l'historique : un dossier marqué l'est pour tous les commits qui l'ont touché.
+function declaresPasDeMoi(dossier, chemins) {
+  const uniques = [...new Set(chemins)];
+  if (!uniques.length) return new Set();
+  const sortie = execFileSync('git',
+    ['-C', dossier, 'check-attr', '-z', '--stdin', '--source=HEAD', ...ATTRIBUTS_PAS_DE_MOI],
+    { input: uniques.join('\0') + '\0', encoding: 'utf8', maxBuffer: 1 << 28, timeout: CHRONO });
+  const champs = sortie.split('\0');   // chemin, attribut, valeur — trois par trois
+  const marques = new Set();
+  for (let i = 0; i + 2 < champs.length; i += 3)
+    if (champs[i + 2] === 'set' || champs[i + 2] === 'true') marques.add(champs[i]);
+  return marques;
 }
 
 /**
@@ -177,13 +231,18 @@ async function listerDepots() {
  * bougeait, elle ne pourrait que faire SORTIR des lignes de la fenêtre : le bon sens d'erreur.
  */
 function parcourir(dossier, maintenant) {
-  const args = ['-C', dossier, 'log', '--no-merges', '--numstat', '--pretty=tformat:%x00%an%x1f%at', ...pathspec];
+  // `core.quotePath=false` : sans lui, git écrit un nom accentué entre guillemets et en octal
+  // (`"src/caf\303\251.rs"`), dont l'extension lue devient `.rs"` — hors liste blanche.
+  const args = ['-C', dossier, '-c', 'core.quotePath=false', 'log', '--no-merges', '--numstat',
+    '--pretty=tformat:%x00%an%x1f%at', ...pathspec];
 
-  let sortie;
-  try { sortie = execFileSync('git', args, { encoding: 'utf8', maxBuffer: 1 << 28, timeout: CHRONO }); }
-  catch { return { code: 0, ecrits: 0, code7d: 0, ecrits7d: 0, ecartes: 0 }; }
+  // Pas de `try` ici, délibérément. L'ancienne version rendait ZÉRO quand git échouait (délai
+  // dépassé, tampon plein) : le dépôt disparaissait du total, et le job restait vert. Un
+  // historique illisible n'est pas un dépôt vide — on préfère un job rouge, visible, à un
+  // chiffre amputé que personne ne remarque.
+  const sortie = execFileSync('git', args, { encoding: 'utf8', maxBuffer: 1 << 28, timeout: CHRONO });
 
-  let code = 0, ecrits = 0, code7d = 0, ecrits7d = 0, ecartes = 0;
+  const entrees = [];
   let ignorer = true;      // tant qu'on n'a pas vu d'en-tête, on ne compte rien
   let recent = false;
 
@@ -202,43 +261,62 @@ function parcourir(dossier, maintenant) {
     const ajouts = parseInt(champs[0], 10);      // '-' pour un binaire → NaN, ignoré
     const retraits = parseInt(champs[1], 10);
     if (!Number.isFinite(ajouts) || !Number.isFinite(retraits)) continue;
+    entrees.push({ ajouts, retraits, recent, chemin: cheminFinal(champs.slice(2).join('\t')) });
+  }
 
+  const pasDeMoi = declaresPasDeMoi(dossier, entrees.map(e => e.chemin));
+  let code = 0, ecrits = 0, code7d = 0, ecrits7d = 0, ecartes = 0, declares = 0;
+
+  for (const { ajouts, retraits, recent, chemin } of entrees) {
+    // Filet 2 bis : le dépôt l'a marqué comme n'étant pas de moi.
+    if (pasDeMoi.has(chemin)) { declares += ajouts; continue; }
     // Filet 3 : le plafond se juge sur le REMUEMENT, filet 4 : on ne COMPTE que les ajouts.
     if (ajouts + retraits > PLAFOND_PAR_FICHIER) { ecartes += ajouts + retraits; continue; }
     if (ajouts === 0) continue;
 
-    const ext = extension(champs[2]);
+    const ext = extension(chemin);
     if (CODE.includes(ext)) { code += ajouts; if (recent) code7d += ajouts; }
     else if (ECRITS.includes(ext)) { ecrits += ajouts; if (recent) ecrits7d += ajouts; }
   }
-  return { code, ecrits, code7d, ecrits7d, ecartes };
+  return { code, ecrits, code7d, ecrits7d, ecartes, declares };
 }
 
 (async () => {
   const depots = (await listerDepots()).filter(r => !r.fork && r.name !== OWNER && r.size > 0);
+  // Toutes les questions à l'API AVANT les clones. Posée après dix minutes de `git clone`, la
+  // même requête réutilisait une connexion que GitHub avait fermée entre-temps (« other side
+  // closed », vu le 19 octobre 2026) : un échec sans rapport avec la question.
+  const glucoseVersion = await derniereVersion('GlucoseGit');
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'churn-'));
   const lignes = [];
   const maintenant = Math.floor(Date.now() / 1000);
 
   try {
     for (const r of depots) {
-      const dossier = path.join(tmp, r.name);
+      const dossier = path.join(tmp, r.name + '.git');
       const url = `https://x-access-token:${TOKEN}@github.com/${r.full_name}.git`;
+      // Un clone `--bare` : l'historique seul, sans fichiers déballés. On ne lit que `git log`
+      // et les attributs (`--source=HEAD`), et un dépôt aux chemins très longs ne peut plus
+      // échouer au déballage.
+      // Un clone raté, lui non plus, n'est plus sauté en silence : l'ancienne version passait
+      // au suivant, et le dépôt manquait au total publié ce jour-là. Le job échoue et on garde
+      // les chiffres de la veille, qui étaient justes.
       try {
-        execFileSync('git', ['clone', '--quiet', '--single-branch', url, dossier],
+        execFileSync('git', ['clone', '--quiet', '--bare', '--single-branch', url, dossier],
           { stdio: 'ignore', timeout: CHRONO });
-      } catch { console.error('clone échoué :', r.full_name); continue; }
+      } catch { throw new Error(`clone échoué : ${r.full_name} — rien n'est publié aujourd'hui`); }
 
       const m = parcourir(dossier, maintenant);
       lignes.push({
         name: r.name, private: r.private, lang: r.language || null,
         all: m.code, d7: m.code7d,              // « all » = le CODE : c'est le chiffre affiché
         ecrits: m.ecrits, ecrits7d: m.ecrits7d,
-        ecartes: m.ecartes,
+        ecartes: m.ecartes, declares: m.declares,
       });
       console.error(
         `${r.name.padEnd(38)} code=${String(m.code).padStart(8)}  écrits=${String(m.ecrits).padStart(7)}` +
-        `  7j=${String(m.code7d).padStart(7)}${m.ecartes ? `  (écartés : ${m.ecartes} lignes générées)` : ''}`);
+        `  7j=${String(m.code7d).padStart(7)}${m.ecartes ? `  (écartés : ${m.ecartes} lignes générées)` : ''}` +
+        `${m.declares ? `  (déclarés pas de moi : ${m.declares})` : ''}`);
     }
 
     const somme = (k, f = () => true) => lignes.filter(f).reduce((s, x) => s + (x[k] || 0), 0);
@@ -248,7 +326,8 @@ function parcourir(dossier, maintenant) {
       publicAll: somme('all', r => !r.private), privateAll: somme('all', r => r.private),
       public7d: somme('d7', r => !r.private), private7d: somme('d7', r => r.private),
       ecritsAll: somme('ecrits'), ecrits7d: somme('ecrits7d'),
-      ecartesAll: somme('ecartes'),
+      ecartesAll: somme('ecartes'), declaresAll: somme('declares'),
+      glucoseVersion,
       // La méthode voyage AVEC le chiffre : un nombre qu'on ne peut pas auditer ne vaut rien.
       methode: {
         regle: 'liste blanche — seules les extensions de code listées sont comptées',
@@ -257,6 +336,7 @@ function parcourir(dossier, maintenant) {
         plafondParFichier: PLAFOND_PAR_FICHIER,
         botsExclus: true,
         ecritsComptesAPart: true,
+        declaresParLeDepot: ATTRIBUTS_PAS_DE_MOI.join(' + ') + ' (.gitattributes) ne sont jamais comptés',
         note: 'assets 3D, images, données, journaux, dépendances embarquées et fichiers générés ne sont jamais comptés',
       },
       repos: lignes.sort((a, b) => b.all - a.all),
@@ -265,7 +345,8 @@ function parcourir(dossier, maintenant) {
     fs.writeFileSync('stats/stats.json', JSON.stringify(data, null, 2));
     console.error(
       `\nOK -> stats/stats.json  ·  code ${data.totalAll} (7j ${data.total7d})` +
-      `  ·  écrits ${data.ecritsAll}  ·  écartés comme générés ${data.ecartesAll}`);
+      `  ·  écrits ${data.ecritsAll}  ·  écartés comme générés ${data.ecartesAll}` +
+      `  ·  déclarés pas de moi ${data.declaresAll}  ·  Glucose ${data.glucoseVersion}`);
   } finally {
     // Les clones portent le jeton dans leur `.git/config`. Sur un runner éphémère c'est sans
     // conséquence ; lancé à la main sur une vraie machine, ça laisserait treize copies du

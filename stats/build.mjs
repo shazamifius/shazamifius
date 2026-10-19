@@ -50,9 +50,11 @@ const pub = S.repos.filter(r => !r.private && r.all >= 1000);   // liste : on ma
 const priv = S.repos.filter(r => r.private);
 const privAll = priv.reduce((s, r) => s + r.all, 0);
 
-// enroule les projets publics en lignes <= ~52 caractères
-function wrapPublic(items, width = 52) {
+// enroule les projets publics en lignes <= ~52 caractères ; `autres` = ceux qui n'ont pas eu
+// de place, nommés par leur nombre (le total, lui, les compte toujours)
+function wrapPublic(items, autres = 0, width = 52) {
   const parts = items.map(r => `${disp(r.name)} ${kk(r.all)}`);
+  if (autres) parts.push(`+${autres} autre${autres > 1 ? 's' : ''}`);
   const lines = []; let cur = '';
   for (const p of parts) {
     if (cur && (cur + ' · ' + p).length > width) { lines.push(cur); cur = p; }
@@ -62,16 +64,49 @@ function wrapPublic(items, width = 52) {
   return lines.map(l => `  │     ${l}`).join('\n');
 }
 
-let content = rd('stats/content.tmpl.txt')
+// Glucose : la version vient des Releases (compute.mjs), jamais d'une main qui l'oublie.
+if (!S.glucoseVersion) throw new Error('stats.json sans glucoseVersion : relancer stats/compute.mjs');
+
+const rendre = (publicLines) => rd('stats/content.tmpl.txt')
   .replace('{{TOTAL_ALL}}', grp(S.totalAll))
   .replace('{{TOTAL_7D}}', grp(S.total7d))
-  .replace('{{PUBLIC_LINES}}', wrapPublic(pub))
+  .replace('{{PUBLIC_LINES}}', publicLines)
   .replace('{{N_PRIV}}', priv.length + (priv.length > 1 ? ' repos' : ' repo'))
   .replace('{{PRIV_ALL}}', grp(privAll))
   // La documentation est du vrai travail, mais ce n'est pas du code : elle a sa ligne, jamais
   // l'addition. Un total qui mélange les deux serait déjà un chiffre un peu faux.
   .replace('{{ECRITS}}', grp(S.ecritsAll ?? 0))
+  .replace('{{GLUCOSE_VERSION}}', S.glucoseVersion)
   .replace('{{DATE}}', S.generatedAt);
+
+// ---- la place disponible ----
+// Le texte est découpé par `winClip` : ce qui dépasse le bas du cadre n'est pas tronqué avec des
+// points de suspension, il DISPARAÎT — silencieusement. Une première garde faisait donc échouer
+// le job dès que la page débordait. Elle a mordu le 19 octobre 2026, exactement comme son
+// commentaire le prédisait : `minigym` a passé les 1 000 lignes, la liste publique a pris une
+// ligne de plus, et la page a cessé de se mettre à jour.
+//
+// La garde avait raison, mais la cause est structurelle : la liste grandit avec chaque nouveau
+// projet, et le cadre, lui, ne grandit pas. Elle tournerait donc au rouge à chaque projet
+// public, jusqu'à ce que quelqu'un raccourcisse le gabarit à la main. Alors c'est la LISTE qui
+// cède : elle prend la place que le cadre laisse, garde les plus gros projets, et nomme les
+// autres par leur nombre (« +2 autres »). Le job n'échoue plus que si le gabarit, lui seul, ne
+// tient plus — et ça, c'est une décision humaine, pas un effet de la croissance.
+const Y_TEXTE = 300, FONT_TEXTE = 24, INTERLIGNE = FONT_TEXTE * 1.28;
+const cadre = /<clipPath id="winClip">\s*<rect[^>]*\by="([\d.]+)"[^>]*\bheight="([\d.]+)"/.exec(rd(HERO));
+const bas = cadre ? parseFloat(cadre[1]) + parseFloat(cadre[2]) : Infinity;
+// `blk` pose la ligne i à y + (i + 0.9) × interligne ; le pied des lettres doit rester dans le cadre.
+const lignesMax = Math.floor((bas - Y_TEXTE) / INTERLIGNE + 0.1);
+
+let content;
+for (let k = pub.length; k >= 0; k--) {
+  content = rendre(wrapPublic(pub.slice(0, k), pub.length - k));
+  if (rowCount(content) <= lignesMax) break;
+  if (k === 0) throw new Error(
+    `le gabarit seul dépasse le cadre (${rowCount(content)} lignes, ${lignesMax} possibles) — ` +
+    `raccourcis stats/content.tmpl.txt ou agrandis le cadre.`);
+}
+console.error(`page : ${rowCount(content)} lignes sur ${lignesMax} possibles — ça tient.`);
 
 // ---- spécimens ASCII (mêmes positions que le visuel) ----
 const G = '#333333';
@@ -96,29 +131,7 @@ const specs = layout.map((s, idx) => {
   }
   return blk(txt, s.x, s.y, s.font, G, extra);
 }).join('\n');
-// GARDE ANTI-DÉBORDEMENT. Le texte est découpé par `winClip` : ce qui dépasse le bas du cadre
-// n'est pas tronqué avec des points de suspension, il DISPARAÎT — silencieusement. C'est
-// exactement ce qui vient d'arriver en ajoutant deux lignes au gabarit : la dernière ligne de la
-// page ne s'affichait plus, et rien ne le disait. Le jour où un 7ᵉ dépôt public dépasse les
-// 1 000 lignes, `wrapPublic` rendra une ligne de plus et le problème reviendrait.
-// Alors on préfère un job en échec, visible, à une page amputée que personne ne remarque.
-function verifierQueTexteTientDansLeCadre(texte, y, font) {
-  const m = /<clipPath id="winClip">\s*<rect[^>]*\by="([\d.]+)"[^>]*\bheight="([\d.]+)"/.exec(rd(HERO));
-  if (!m) return;                                   // cadre introuvable : on ne bloque pas sur une supposition
-  const bas = parseFloat(m[1]) + parseFloat(m[2]);
-  let lignes = texte.split('\n');
-  while (lignes.length && !lignes[0].trim()) lignes.shift();
-  while (lignes.length && !lignes[lignes.length - 1].trim()) lignes.pop();
-  const derniere = y + (lignes.length - 0.1) * font * 1.28;
-  if (derniere > bas) {
-    throw new Error(
-      `la page dépasse le cadre : dernière ligne à ${derniere.toFixed(0)}, le cadre s'arrête à ${bas}. ` +
-      `${lignes.length} lignes rendues — raccourcis le gabarit (stats/content.tmpl.txt) ou agrandis le cadre.`);
-  }
-  console.error(`page : ${lignes.length} lignes, dernière à ${derniere.toFixed(0)} (cadre ${bas}) — ça tient.`);
-}
-verifierQueTexteTientDansLeCadre(content, 300, 24);
-const text = blk(content, null, 300, 24, '#1a1a1a');
+const text = blk(content, null, Y_TEXTE, FONT_TEXTE, '#1a1a1a');
 const payload = `  <!-- README page -->\n${fadeDefs}${specs}\n${text}\n  <!-- /README page -->`;
 
 // ---- injection dans hero.svg ----

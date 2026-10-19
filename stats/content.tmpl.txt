@@ -36,16 +36,16 @@ shazamifius@github ~ $ cat web3game.md
 
 shazamifius@github ~ $ cat glucose.md
 
-  ┌─[ Glucose ]·· TypeScript · Rust · CRDT
+  ┌─[ Glucose ]·· Rust natif · sans navigateur
   │
   │   Un canvas infini pour poser ses idées à plat, et les relier.
   │   « Pose. Relie. Zoome. Explore. » — rien d'autre.
   │
   │   ce qui marche déjà
   │     ├─ toile infinie, notes reliées par flèches typées (du sens)
-  │     ├─ 100% local · doc Automerge (CRDT) qu'on ne peut pas casser
+  │     ├─ enregistré à chaque geste · une Time Machine, geste par geste
   │     ├─ un serveur MCP fait main : l'IA lit la STRUCTURE, pas l'écran
-  │     └─ une géométrie déterministe (même entrée = même sortie)
+  │     └─ un noyau sans dépendance : 10 millions de nœuds en 141 ms
   │
   │   ce que je cherche encore
   │     ├─ pas « mieux » qu'une feuille de papier —
@@ -55,7 +55,7 @@ shazamifius@github ~ $ cat glucose.md
   │   l'idée, au fond
   │     └─ un langage 2D entre l'espace latent de l'IA et l'œil
   │
-  │   v1.0.1-beta.24 · MIT · bêta, encore en chantier
+  │   {{GLUCOSE_VERSION}} · MIT · bêta, encore en chantier
   │   → github.com/shazamifius/GlucoseGit
   └───
 
