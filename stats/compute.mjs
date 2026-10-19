@@ -18,9 +18,15 @@
 //
 //  ┌─ LA RÈGLE ──────────────────────────────────────────────────────────────────────────┐
 //  │  On ne dit plus « compte tout, sauf… ». On dit « ne compte QUE… ».                   │
-//  │  Ce compteur a le droit de SOUS-estimer. Il n'a pas le droit de SUR-estimer.         │
-//  │  Toute décision douteuse se tranche donc vers le bas, sans hésiter.                  │
+//  │  Ce compteur doit être JUSTE : rien deux fois, et rien d'oublié.                     │
+//  │  Seul ce qu'on ne sait pas MESURER se tranche vers le bas, faute de mieux.           │
 //  └──────────────────────────────────────────────────────────────────────────────────────┘
+//
+//  (Jusqu'au 19 octobre 2026, la règle disait « le droit de sous-estimer », et on oubliait
+//  sans scrupule : une branche entière, un fichier renommé. Mais un chiffre trop bas n'est pas
+//  plus vrai qu'un chiffre trop haut. Ce qui se mesure se mesure : les lignes déplacées sont
+//  retirées parce que git sait les reconnaître, les branches comptent parce qu'on sait
+//  reconnaître leurs copies.)
 //
 //  ── CE QU'UNE REVUE ADVERSE A CORRIGÉ, LE JOUR MÊME ────────────────────────────────────
 //  La première version de cette réécriture affirmait qu'une liste blanche « ne peut plus
@@ -43,7 +49,7 @@
 //  Les quatre sont corrigés ci-dessous. On garde la leçon : la règle protège du bruit, elle
 //  ne dispense pas de vérifier.
 //
-//  ── LES QUATRE FILETS ──────────────────────────────────────────────────────────────────
+//  ── LES SIX FILETS ─────────────────────────────────────────────────────────────────────
 //   1. LISTE BLANCHE d'extensions — seul du code source connu est compté.
 //   2. DOSSIERS de dépendances et de génération — écartés quelle que soit l'extension.
 //      2 bis. Et tout ce que le dépôt marque lui-même `linguist-vendored` / `linguist-generated`.
@@ -51,6 +57,8 @@
 //      une machine qui a écrit. Ce filet ne regarde aucune extension : c'est lui qui reste
 //      debout quand les deux premiers ont tort.
 //   4. AJOUTS SEULS — une suppression n'est pas une écriture.
+//   5. LIGNES NEUVES SEULES — un copier-coller d'un fichier à l'autre n'est pas une écriture.
+//   6. RIEN DEUX FOIS — une version de fichier ou une ligne déjà comptée ne se recompte pas.
 //
 //  ── ET DEUX SÉPARATIONS HONNÊTES ───────────────────────────────────────────────────────
 //   · les BOTS ne comptent pas (dependabot, github-actions…) : ce n'est pas moi qui écris ;
@@ -61,10 +69,11 @@
 //  Requiert STATS_TOKEN (PAT fine-grained : Contents + Metadata, lecture seule).
 // ════════════════════════════════════════════════════════════════════════════════════════
 
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import readline from 'node:readline';
 
 const TOKEN = process.env.STATS_TOKEN;
 if (!TOKEN) { console.error('STATS_TOKEN manquant'); process.exit(1); }
@@ -173,6 +182,7 @@ const pathspec = [
   ...ECRITS.map(e => `:(glob)**/*${e}`),
   ...DOSSIERS_EXCLUS.map(e => `:(exclude,glob)${e}`),
 ];
+const pathspecCode = pathspec.filter(p => !ECRITS.some(e => p === `:(glob)**/*${e}`));
 
 const API = { headers: { Authorization: `Bearer ${TOKEN}`, 'User-Agent': 'stats-bot', Accept: 'application/vnd.github+json' } };
 
@@ -217,68 +227,237 @@ function declaresPasDeMoi(dossier, chemins) {
   return marques;
 }
 
+// ── FILET 5 — une ligne déplacée n'est pas une ligne écrite ──────────────────────────────
+// Né le 19 octobre 2026. Découper `app.rs` en modules, c'est couper du code d'un fichier et le
+// coller dans un autre : `--numstat` voyait des lignes retirées ici et AJOUTÉES là, et le
+// compteur les comptait une seconde fois. Mesuré sur Glucose : ~15 700 lignes, écrites une fois,
+// comptées deux.
+//
+// Git sait reconnaître ce texte déplacé (`--color-moved`), mais il ne le dit qu'en COULEUR. On
+// lui impose donc nos couleurs, et on lit la couleur de chaque ligne ajoutée : verte, elle est
+// neuve ; cyan ou bleue, git a retrouvé le même texte retiré ailleurs dans le même commit.
+// `zebra` n'appelle « déplacé » qu'un bloc d'au moins 20 caractères alphanumériques : une
+// accolade seule reste neuve. `allow-indentation-change` reconnaît aussi un bloc ré-indenté.
+const COULEURS = [
+  '-c', 'color.diff.new=green',
+  '-c', 'color.diff.newMoved=cyan', '-c', 'color.diff.newMovedAlternative=blue',
+];
+const ANSI = /\x1b\[[0-9;]*m/g;
+const estDeplacee = (brute) => /^\x1b\[(?:[0-9;]*;)?3[46](?:;[0-9;]*)?m/.test(brute);
+
+// ── FILET 6 — ce qui a déjà été compté ne se recompte pas ────────────────────────────────
+// Né le 19 octobre 2026, sur VRchat-tracking : ses quatre branches n'ont AUCUN ancêtre commun
+// avec `main`. Le projet y a été redéposé, historique par historique — 28 fichiers strictement
+// identiques à ceux de `main` sur une seule branche. Autant de commits différents, à d'autres
+// dates : ni l'empreinte ni `--color-moved` (qui ne regarde qu'UN commit) ne pouvaient les voir.
+// Il faut regarder le CONTENU.
+//
+// La règle : dans un fichier, une ligne compte autant de fois qu'elle a été présente EN MÊME
+// TEMPS, au plus, dans une version de ce fichier. Deux exemplaires côte à côte : deux lignes.
+// Retirée puis remise, réécrite à l'identique parce que le diff s'est mal aligné, redéposée sur
+// une autre branche : toujours une. Pour la tenir, le diff est demandé avec un contexte
+// illimité — il montre alors chaque version entière du fichier — et l'on garde, par fichier, le
+// plus grand nombre d'exemplaires déjà compté pour chaque ligne. Une ligne se compare sans son
+// indentation : ré-indenter un bloc n'est pas l'écrire.
+//
+// Une première version tenait une simple liste des lignes déjà vues, et laissait de côté les
+// lignes courtes (moins de 20 caractères alphanumériques) pour ne pas confondre deux `}`. Elle
+// comptait MOINS de lignes écrites que de lignes présentes dans des dépôts écrits d'un seul jet :
+// la seconde de deux lignes identiques passait pour une redite. Compter les exemplaires règle
+// les deux à la fois, et le seuil a disparu.
+//
+// Et une version de fichier exactement identique à une version déjà comptée, AILLEURS (une
+// copie, une sauvegarde sous un autre nom), n'apporte aucune ligne : on la reconnaît à son
+// identifiant git, le « blob ».
+
+// Le contexte illimité, tel que git l'écrit : au-delà de la plus longue version de fichier.
+const CONTEXTE_ILLIMITE = '--unified=1000000000';
+
 /**
  * UNE seule traversée de l'historique, qui remplit les deux compteurs (tout-temps et 7 jours).
  *
- * Le format demandé à git fait précéder les statistiques de chaque commit d'une ligne
- * « \0auteur\x1fdate-d'auteur ». On sait ainsi À QUI appartiennent les lignes qui suivent, et
- * DE QUAND elles datent.
+ * Le format demandé à git fait précéder le diff de chaque commit d'une ligne
+ * « \0auteur\x1fdate-d'auteur\x1fsujet ». On sait ainsi À QUI appartiennent les lignes qui
+ * suivent, et DE QUAND elles datent.
  *
  * Cette date est celle de l'AUTEUR, délibérément — pas celle du commit. `git log --since`
  * filtre sur la date du commit, et un `rebase`, un `--amend` ou un « squash and merge » la
  * remet à aujourd'hui : du travail vieux de plusieurs mois se serait affiché comme écrit cette
- * semaine. La date d'auteur, elle, survit à la réécriture d'historique. Et si jamais elle
- * bougeait, elle ne pourrait que faire SORTIR des lignes de la fenêtre : le bon sens d'erreur.
+ * semaine. La date d'auteur, elle, survit à la réécriture d'historique.
+ *
+ * TOUTES LES BRANCHES (`--all`), depuis le 19 octobre 2026 : du travail resté sur une branche
+ * est du travail écrit (tout `glucose-brain` vivait sur `rnd`, et comptait zéro). Un commit
+ * partagé par deux branches est un seul objet, git ne le sort qu'une fois. Restent les COPIES
+ * (un `cherry-pick`, un `rebase` dont l'original survit sur une autre branche) : nouvel
+ * identifiant, même travail. Elles gardent leur auteur, leur date d'auteur et leur sujet — c'est
+ * cette empreinte qui les reconnaît, et seule la première rencontrée compte.
+ *
+ * DU PLUS ANCIEN AU PLUS RÉCENT (`--reverse --author-date-order`) : face à deux copies, c'est
+ * la première écrite qui compte, et un vieux fichier redéposé hier n'entre pas dans les 7 jours.
+ *
+ * L'HISTORIQUE COMPLET (`--full-history`) : filtré par chemin, `git log` « simplifie » par
+ * défaut, et cache les commits d'une branche fusionnée sans effet sur ces chemins. Ce qu'il
+ * cachait dépendait de la LONGUEUR de la liste de chemins — mesuré le 19 octobre 2026 : 4 ou 6
+ * commits pour le même `styles.css` selon la façon de demander. Un compteur ne doit pas
+ * dépendre de la façon dont on lui pose la question ; les doublons, eux, sont l'affaire du
+ * filet 6.
  */
-function parcourir(dossier, maintenant) {
+async function parcourir(dossier, maintenant) {
+  // Les attributs du dépôt d'abord (filet 2 bis), pour décider de chaque fichier dès qu'il passe
+  // au lieu de garder tout l'historique en mémoire.
+  const pasDeMoi = declaresPasDeMoi(dossier, execFileSync('git',
+    ['-C', dossier, '-c', 'core.quotePath=false', 'log', '--all', '--full-history', '--no-merges',
+      '--no-renames', '--name-only', '--format=', ...pathspec],
+    { encoding: 'utf8', maxBuffer: 1 << 28, timeout: CHRONO }).split('\n').filter(Boolean));
+
   // `core.quotePath=false` : sans lui, git écrit un nom accentué entre guillemets et en octal
   // (`"src/caf\303\251.rs"`), dont l'extension lue devient `.rs"` — hors liste blanche.
-  const args = ['-C', dossier, '-c', 'core.quotePath=false', 'log', '--no-merges', '--numstat',
-    '--pretty=tformat:%x00%an%x1f%at', ...pathspec];
+  // `--full-index` : l'identifiant complet de chaque version de fichier, pour le filet 6.
+  const args = ['-C', dossier, '-c', 'core.quotePath=false', ...COULEURS,
+    'log', '--all', '--full-history', '--no-merges', '--reverse', '--author-date-order',
+    '-p', CONTEXTE_ILLIMITE, '--full-index', '--color=always',
+    '--color-moved=zebra', '--color-moved-ws=allow-indentation-change',
+    '--format=%x00%an%x1f%at%x1f%s', ...pathspec];
 
-  // Pas de `try` ici, délibérément. L'ancienne version rendait ZÉRO quand git échouait (délai
-  // dépassé, tampon plein) : le dépôt disparaissait du total, et le job restait vert. Un
-  // historique illisible n'est pas un dépôt vide — on préfère un job rouge, visible, à un
-  // chiffre amputé que personne ne remarque.
-  const sortie = execFileSync('git', args, { encoding: 'utf8', maxBuffer: 1 << 28, timeout: CHRONO });
+  // Le diff complet de tout un historique peut peser des centaines de Mo : on le lit en flux,
+  // ligne à ligne, au lieu de l'attendre en entier.
+  const git = spawn('git', args, { stdio: ['ignore', 'pipe', 'pipe'] });
+  let erreur = '';
+  git.stderr.on('data', d => { erreur += d; });
+  const chrono = setTimeout(() => git.kill(), CHRONO);
+  const fin = new Promise(ok => git.on('close', (code, signal) => ok({ code, signal })));
 
-  const entrees = [];
+  let code = 0, ecrits = 0, code7d = 0, ecrits7d = 0, ecartes = 0, declares = 0, deplacees = 0;
+  let recopiees = 0;
+  const versionsVues = new Set();      // les blobs déjà comptés
+  const exemplaires = new Map();       // chemin → (ligne → plus grand nombre d'exemplaires compté)
+
+  const decider = (f) => {
+    // Filet 2 bis : le dépôt l'a marqué comme n'étant pas de moi.
+    if (pasDeMoi.has(f.chemin)) { declares += f.ajouts; return; }
+    // Filet 3 : le plafond se juge sur le REMUEMENT, déplacements compris.
+    if (f.ajouts + f.retraits > PLAFOND_PAR_FICHIER) { ecartes += f.ajouts + f.retraits; return; }
+    const ext = extension(f.chemin);
+    if (!CODE.includes(ext) && !ECRITS.includes(ext)) return;
+    // Filet 5 : une ligne déplacée n'est pas écrite.
+    deplacees += f.deplacees;
+
+    // Filet 6. Un fichier renommé emporte sa mémoire : son contenu n'est pas neuf sous un
+    // nouveau nom.
+    if (!exemplaires.has(f.chemin)) exemplaires.set(f.chemin, new Map(f.renommeDe && exemplaires.get(f.renommeDe)));
+    const deja = exemplaires.get(f.chemin);
+    const copie = f.version !== null && versionsVues.has(f.version);
+    let neuves = 0;
+    for (const [texte, n] of f.apres) {
+      const avant = deja.get(texte) || 0;
+      if (n <= avant) continue;
+      deja.set(texte, n);
+      if (!copie) neuves += Math.max(0, n - avant - (f.deplaceesParTexte.get(texte) || 0));
+    }
+    if (f.version !== null) versionsVues.add(f.version);
+    // Jamais plus que ce que ce commit a ajouté : ce qu'il n'a pas touché, il ne l'a pas écrit
+    // (un fichier renommé depuis un chemin hors liste blanche arrive sans mémoire).
+    neuves = Math.min(neuves, f.ajouts - f.deplacees);
+    recopiees += f.ajouts - f.deplacees - neuves;
+
+    // Filet 4 : on ne COMPTE que des ajouts — et, depuis les filets 5 et 6, des ajouts NEUFS.
+    if (CODE.includes(ext)) { code += neuves; if (f.recent) code7d += neuves; }
+    else { ecrits += neuves; if (f.recent) ecrits7d += neuves; }
+  };
+
+  const empreintes = new Set();
   let ignorer = true;      // tant qu'on n'a pas vu d'en-tête, on ne compte rien
-  let recent = false;
+  let recent = false, enTete = false, avant = null, fichier = null;
+  const clore = () => { if (fichier?.chemin) decider(fichier); fichier = null; };
 
-  for (const ligne of sortie.split('\n')) {
-    if (ligne.startsWith('\0')) {
-      const [auteur, horodatage] = ligne.slice(1).split('\x1f');
-      ignorer = EST_UN_BOT(auteur || '');
+  for await (const brute of readline.createInterface({ input: git.stdout, crlfDelay: Infinity })) {
+    if (brute.startsWith('\0')) {
+      clore();
+      const [auteur = '', horodatage, sujet] = brute.slice(1).split('\x1f');
+      const empreinte = `${auteur}\x1f${horodatage}\x1f${sujet}`;
+      ignorer = EST_UN_BOT(auteur) || empreintes.has(empreinte);
+      empreintes.add(empreinte);
       const t = parseInt(horodatage, 10);
       recent = Number.isFinite(t) && (maintenant - t) <= SEPT_JOURS;
       continue;
     }
     if (ignorer) continue;
 
-    const champs = ligne.split('\t');
-    if (champs.length < 3) continue;
-    const ajouts = parseInt(champs[0], 10);      // '-' pour un binaire → NaN, ignoré
-    const retraits = parseInt(champs[1], 10);
-    if (!Number.isFinite(ajouts) || !Number.isFinite(retraits)) continue;
-    entrees.push({ ajouts, retraits, recent, chemin: cheminFinal(champs.slice(2).join('\t')) });
+    const ligne = brute.replace(ANSI, '');
+    if (ligne.startsWith('diff --git ')) {
+      clore();
+      fichier = {
+        chemin: null, renommeDe: null, version: null, recent,
+        ajouts: 0, retraits: 0, deplacees: 0,
+        apres: new Map(),              // la version d'arrivée : ligne → nombre d'exemplaires
+        deplaceesParTexte: new Map(),
+      };
+      enTete = true; avant = null;
+      continue;
+    }
+    if (!fichier) continue;
+    if (enTete) {
+      // Le chemin d'ARRIVÉE ; pour un fichier supprimé (`+++ /dev/null`), celui de départ.
+      // Git ajoute une tabulation après un nom qui contient une espace.
+      if (ligne.startsWith('index ')) {
+        const v = /\.\.([0-9a-f]+)/.exec(ligne)?.[1];
+        if (v && !/^0+$/.test(v)) fichier.version = v;   // que des zéros : le fichier est supprimé
+      }
+      else if (ligne.startsWith('rename from ')) fichier.renommeDe = ligne.slice(12);
+      else if (ligne.startsWith('--- a/')) avant = ligne.slice(6).replace(/\t$/, '');
+      else if (ligne.startsWith('+++ ')) fichier.chemin = ligne.startsWith('+++ b/') ? ligne.slice(6).replace(/\t$/, '') : avant;
+      else if (ligne.startsWith('@@')) enTete = false;
+      continue;
+    }
+    if (ligne.startsWith('@@')) continue;
+    const signe = ligne[0], texte = ligne.slice(1).trim();
+    if (signe === '-') { fichier.retraits++; continue; }
+    if (signe !== '+' && signe !== ' ') continue;          // `\ No newline at end of file`
+    fichier.apres.set(texte, (fichier.apres.get(texte) || 0) + 1);
+    if (signe === '+') {
+      fichier.ajouts++;
+      if (estDeplacee(brute)) {
+        fichier.deplacees++;
+        fichier.deplaceesParTexte.set(texte, (fichier.deplaceesParTexte.get(texte) || 0) + 1);
+      }
+    }
   }
+  clore();
+  clearTimeout(chrono);
 
-  const pasDeMoi = declaresPasDeMoi(dossier, entrees.map(e => e.chemin));
-  let code = 0, ecrits = 0, code7d = 0, ecrits7d = 0, ecartes = 0, declares = 0;
+  // Pas de `try` ici, délibérément. L'ancienne version rendait ZÉRO quand git échouait (délai
+  // dépassé, tampon plein) : le dépôt disparaissait du total, et le job restait vert. Un
+  // historique illisible n'est pas un dépôt vide — on préfère un job rouge, visible, à un
+  // chiffre amputé que personne ne remarque.
+  const { code: sortie, signal } = await fin;
+  if (sortie !== 0) throw new Error(`git log a échoué sur ${dossier} (${signal || sortie}) : ${erreur.trim()}`);
 
-  for (const { ajouts, retraits, recent, chemin } of entrees) {
-    // Filet 2 bis : le dépôt l'a marqué comme n'étant pas de moi.
-    if (pasDeMoi.has(chemin)) { declares += ajouts; continue; }
-    // Filet 3 : le plafond se juge sur le REMUEMENT, filet 4 : on ne COMPTE que les ajouts.
-    if (ajouts + retraits > PLAFOND_PAR_FICHIER) { ecartes += ajouts + retraits; continue; }
-    if (ajouts === 0) continue;
+  return { code, ecrits, code7d, ecrits7d, ecartes, declares, deplacees, recopiees };
+}
 
-    const ext = extension(chemin);
-    if (CODE.includes(ext)) { code += ajouts; if (recent) code7d += ajouts; }
-    else if (ECRITS.includes(ext)) { ecrits += ajouts; if (recent) ecrits7d += ajouts; }
+// Le second chiffre : ce qui est ENCORE LÀ, aujourd'hui, sur la branche principale. Il ne
+// répond pas à la même question que le premier — « quelle taille fait le projet », et non
+// « combien j'en ai écrit » : Glucose 1, réécrit en Rust, compte dans l'un et plus dans l'autre.
+// Les deux sont vrais ; c'est pourquoi la page montre les deux. Mêmes règles que le premier :
+// liste blanche, dossiers exclus, attributs du dépôt, plafond par fichier.
+function presentes(dossier) {
+  let sortie;
+  try {
+    sortie = execFileSync('git',
+      ['-C', dossier, '-c', 'core.quotePath=false', 'grep', '-c', '-I', '-e', '', 'HEAD', ...pathspecCode],
+      { encoding: 'utf8', maxBuffer: 1 << 28, timeout: CHRONO });
+  } catch (e) {
+    if (e.status === 1) return 0;   // `git grep` sort 1 quand rien ne correspond : aucun fichier de code
+    throw e;
   }
-  return { code, ecrits, code7d, ecrits7d, ecartes, declares };
+  const fichiers = sortie.split('\n').filter(Boolean).map(l => {
+    const sansRef = l.slice('HEAD:'.length), i = sansRef.lastIndexOf(':');
+    return { chemin: sansRef.slice(0, i), lignes: parseInt(sansRef.slice(i + 1), 10) };
+  });
+  const pasDeMoi = declaresPasDeMoi(dossier, fichiers.map(f => f.chemin));
+  return fichiers
+    .filter(f => !pasDeMoi.has(f.chemin) && f.lignes <= PLAFOND_PAR_FICHIER)
+    .reduce((s, f) => s + f.lignes, 0);
 }
 
 (async () => {
@@ -295,27 +474,32 @@ function parcourir(dossier, maintenant) {
     for (const r of depots) {
       const dossier = path.join(tmp, r.name + '.git');
       const url = `https://x-access-token:${TOKEN}@github.com/${r.full_name}.git`;
-      // Un clone `--bare` : l'historique seul, sans fichiers déballés. On ne lit que `git log`
-      // et les attributs (`--source=HEAD`), et un dépôt aux chemins très longs ne peut plus
-      // échouer au déballage.
+      // Un clone `--bare` : l'historique seul, sans fichiers déballés, et TOUTES les branches.
+      // On ne lit que `git log`, `git grep HEAD` et les attributs (`--source=HEAD`), et un
+      // dépôt aux chemins très longs ne peut plus échouer au déballage.
       // Un clone raté, lui non plus, n'est plus sauté en silence : l'ancienne version passait
       // au suivant, et le dépôt manquait au total publié ce jour-là. Le job échoue et on garde
       // les chiffres de la veille, qui étaient justes.
       try {
-        execFileSync('git', ['clone', '--quiet', '--bare', '--single-branch', url, dossier],
+        execFileSync('git', ['clone', '--quiet', '--bare', url, dossier],
           { stdio: 'ignore', timeout: CHRONO });
       } catch { throw new Error(`clone échoué : ${r.full_name} — rien n'est publié aujourd'hui`); }
 
-      const m = parcourir(dossier, maintenant);
+      const m = await parcourir(dossier, maintenant);
+      const present = presentes(dossier);
       lignes.push({
         name: r.name, private: r.private, lang: r.language || null,
         all: m.code, d7: m.code7d,              // « all » = le CODE : c'est le chiffre affiché
+        present,                                // ce qui en reste aujourd'hui, branche principale
         ecrits: m.ecrits, ecrits7d: m.ecrits7d,
-        ecartes: m.ecartes, declares: m.declares,
+        ecartes: m.ecartes, declares: m.declares, deplacees: m.deplacees, recopiees: m.recopiees,
       });
       console.error(
-        `${r.name.padEnd(38)} code=${String(m.code).padStart(8)}  écrits=${String(m.ecrits).padStart(7)}` +
-        `  7j=${String(m.code7d).padStart(7)}${m.ecartes ? `  (écartés : ${m.ecartes} lignes générées)` : ''}` +
+        `${r.name.padEnd(38)} code=${String(m.code).padStart(8)}  présent=${String(present).padStart(7)}` +
+        `  écrits=${String(m.ecrits).padStart(7)}  7j=${String(m.code7d).padStart(7)}` +
+        `${m.deplacees ? `  (déplacées : ${m.deplacees})` : ''}` +
+        `${m.recopiees ? `  (déjà comptées : ${m.recopiees})` : ''}` +
+        `${m.ecartes ? `  (écartés : ${m.ecartes} lignes générées)` : ''}` +
         `${m.declares ? `  (déclarés pas de moi : ${m.declares})` : ''}`);
     }
 
@@ -326,12 +510,17 @@ function parcourir(dossier, maintenant) {
       publicAll: somme('all', r => !r.private), privateAll: somme('all', r => r.private),
       public7d: somme('d7', r => !r.private), private7d: somme('d7', r => r.private),
       ecritsAll: somme('ecrits'), ecrits7d: somme('ecrits7d'),
+      presentAll: somme('present'),
       ecartesAll: somme('ecartes'), declaresAll: somme('declares'),
+      deplaceesAll: somme('deplacees'), recopieesAll: somme('recopiees'),
       glucoseVersion,
       // La méthode voyage AVEC le chiffre : un nombre qu'on ne peut pas auditer ne vaut rien.
       methode: {
         regle: 'liste blanche — seules les extensions de code listées sont comptées',
-        comptage: 'ajouts seuls — une ligne supprimée n\'a pas été écrite',
+        comptage: 'ajouts neufs seuls — ni ligne supprimée, ni ligne déplacée, ni version ou ligne déjà comptée',
+        exemplaires: 'dans un fichier, une ligne compte autant de fois qu\'elle a été présente en même temps, au plus',
+        branches: 'toutes ; un commit partagé ou recopié (même auteur, date d\'auteur, sujet) ne compte qu\'une fois',
+        present: 'lignes de code encore présentes sur la branche principale, mêmes règles',
         fenetre: 'date d\'AUTEUR, insensible aux rebases',
         plafondParFichier: PLAFOND_PAR_FICHIER,
         botsExclus: true,
@@ -345,6 +534,7 @@ function parcourir(dossier, maintenant) {
     fs.writeFileSync('stats/stats.json', JSON.stringify(data, null, 2));
     console.error(
       `\nOK -> stats/stats.json  ·  code ${data.totalAll} (7j ${data.total7d})` +
+      `  ·  présent ${data.presentAll}  ·  déplacées ${data.deplaceesAll}  ·  déjà comptées ${data.recopieesAll}` +
       `  ·  écrits ${data.ecritsAll}  ·  écartés comme générés ${data.ecartesAll}` +
       `  ·  déclarés pas de moi ${data.declaresAll}  ·  Glucose ${data.glucoseVersion}`);
   } finally {

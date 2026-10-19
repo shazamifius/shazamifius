@@ -65,11 +65,14 @@ function wrapPublic(items, autres = 0, width = 52) {
 }
 
 // Glucose : la version vient des Releases (compute.mjs), jamais d'une main qui l'oublie.
-if (!S.glucoseVersion) throw new Error('stats.json sans glucoseVersion : relancer stats/compute.mjs');
+for (const champ of ['glucoseVersion', 'presentAll'])
+  if (S[champ] == null) throw new Error(`stats.json sans ${champ} : relancer stats/compute.mjs`);
 
 const rendre = (publicLines) => rd('stats/content.tmpl.txt')
   .replace('{{TOTAL_ALL}}', grp(S.totalAll))
   .replace('{{TOTAL_7D}}', grp(S.total7d))
+  // Ce qui reste aujourd'hui : un autre chiffre, vrai aussi, qui ne remplace pas le premier.
+  .replace('{{PRESENT_ALL}}', grp(S.presentAll))
   .replace('{{PUBLIC_LINES}}', publicLines)
   .replace('{{N_PRIV}}', priv.length + (priv.length > 1 ? ' repos' : ' repo'))
   .replace('{{PRIV_ALL}}', grp(privAll))
