@@ -497,20 +497,20 @@
     <text x="532" y="2201.6" xml:space="preserve"></text>
     <text x="532" y="2232.3" xml:space="preserve">shazamifius@github ~ $ git log --numstat | activité</text>
     <text x="532" y="2263.0" xml:space="preserve"></text>
-    <text x="532" y="2293.7" xml:space="preserve">  ┌─[ investissement ]·· lignes de code écrites (ajouts seuls)</text>
+    <text x="532" y="2293.7" xml:space="preserve">  ┌─[ investissement ]·· lignes de code écrites (neuves, sans doublon)</text>
     <text x="532" y="2324.4" xml:space="preserve">  │</text>
-    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 684 681 lignes</text>
-    <text x="532" y="2385.9" xml:space="preserve">  │   7 derniers jours · privé + public .... 47 663 lignes</text>
-    <text x="532" y="2416.6" xml:space="preserve">  │</text>
-    <text x="532" y="2447.3" xml:space="preserve">  │   projets publics</text>
-    <text x="532" y="2478.0" xml:space="preserve">  │     Glucose ~350k · AegisEngine ~56k</text>
-    <text x="532" y="2508.8" xml:space="preserve">  │     VRchat-tracking ~19k · gogames ~12k</text>
-    <text x="532" y="2539.5" xml:space="preserve">  │     ultra-sync ~11k · eegprev ~10k · +2 autres</text>
-    <text x="532" y="2570.2" xml:space="preserve">  │   privé (19 repos) · 211 423 lignes</text>
-    <text x="532" y="2600.9" xml:space="preserve">  │   + 132 275 lignes de documentation, comptées à part</text>
-    <text x="532" y="2631.6" xml:space="preserve">  │</text>
-    <text x="532" y="2662.4" xml:space="preserve">  │   ( code source seul · objets 3D, données et généré exclus )</text>
-    <text x="532" y="2693.1" xml:space="preserve">  │</text>
+    <text x="532" y="2355.2" xml:space="preserve">  │   tout-temps · privé + public .......... 635 475 lignes</text>
+    <text x="532" y="2385.9" xml:space="preserve">  │     encore présentes aujourd'hui ....... 484 391 lignes</text>
+    <text x="532" y="2416.6" xml:space="preserve">  │   7 derniers jours · privé + public .... 44 069 lignes</text>
+    <text x="532" y="2447.3" xml:space="preserve">  │</text>
+    <text x="532" y="2478.0" xml:space="preserve">  │   projets publics</text>
+    <text x="532" y="2508.8" xml:space="preserve">  │     Glucose ~313k · AegisEngine ~53k</text>
+    <text x="532" y="2539.5" xml:space="preserve">  │     VRchat-tracking ~22k · gogames ~10k · simulateur ~9k</text>
+    <text x="532" y="2570.2" xml:space="preserve">  │     eegprev ~8k · minigym ~5k · ultra-sync ~4k</text>
+    <text x="532" y="2600.9" xml:space="preserve">  │   privé (19 repos) · 207 236 lignes</text>
+    <text x="532" y="2631.6" xml:space="preserve">  │   + 116 216 lignes de documentation, comptées à part</text>
+    <text x="532" y="2662.4" xml:space="preserve">  │</text>
+    <text x="532" y="2693.1" xml:space="preserve">  │   ( code source seul · 3D, tiers, généré et copier-coller exclus )</text>
     <text x="532" y="2723.8" xml:space="preserve">  │   au 2026-10-19 · recalculé tout seul, chaque jour (GitHub Action)</text>
     <text x="532" y="2754.5" xml:space="preserve">  └───</text>
     <text x="532" y="2785.2" xml:space="preserve"></text>
